@@ -132,3 +132,22 @@ def test_generate_dates_and_add_days():
     dates = expedia.helpers.generate_dates("2024-01-01", "2024-01-03", step=1)
     assert dates == ["2024-01-01", "2024-01-02", "2024-01-03"]
     assert expedia.helpers.add_days("2024-01-01", 5) == "2024-01-06"
+
+
+def test_property_display_name_prefers_nested_content():
+    summary = {"name": {"content": {"value": "Hotel Nested"}}}
+    assert expedia.helpers.property_display_name(summary) == "Hotel Nested"
+
+
+def test_property_display_name_fallback():
+    summary = {"something_else": "ignored"}
+    assert expedia.helpers.property_display_name(summary, fallback="Fallback Hotel") == "Fallback Hotel"
+
+
+def test_property_coordinates_extracts_lat_lon():
+    summary = {"location": {"coordinates": {"latitude": "52.1", "longitude": "4.89"}}}
+    assert expedia.helpers.property_coordinates(summary) == (pytest.approx(52.1), pytest.approx(4.89))
+
+
+def test_property_coordinates_handles_missing_values():
+    assert expedia.helpers.property_coordinates({}) == (None, None)

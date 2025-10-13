@@ -1,8 +1,10 @@
 
 import json
-import pandas as pd
-from typing import Dict, Any, List, Optional, Tuple, Union, Callable, Iterable, Mapping
 import math
+from datetime import date, datetime, timedelta
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Tuple, Union
+
+import pandas as pd
 
 
 def build_rates_dataframe(jsons, labels, occupancy_key: str = "2"):
@@ -108,6 +110,53 @@ def extract_cheapest_rates_by_id(
         out[key] = result
     return out
 
+
+def _safe_float(value: Any) -> Optional[float]:
+    """Convert a value to float when possible."""
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def property_display_name(summary: Dict[str, Any], fallback: str = "") -> str:
+    """
+    Best-effort extraction of a property's name from the summary payload returned by EPS Rapid.
+    """
+    name = summary.get("name")
+    if isinstance(name, str):
+        return name
+    if isinstance(name, dict):
+        # Common shapes: {"content": "Hotel"}, {"value": "Hotel"}, {"content": {"value": "Hotel"}}
+        for key in ("content", "value"):
+            value = name.get(key)
+            if isinstance(value, str):
+                return value
+            if isinstance(value, dict):
+                nested_value = value.get("value")
+                if isinstance(nested_value, str):
+                    return nested_value
+    property_name = summary.get("property_name")
+    if isinstance(property_name, str):
+        return property_name
+    return fallback
+
+
+def property_coordinates(summary: Dict[str, Any]) -> Tuple[Optional[float], Optional[float]]:
+    """
+    Extract latitude/longitude from a property summary payload.
+    """
+    location = summary.get("location")
+    coordinates: Dict[str, Any] = {}
+    if isinstance(location, dict):
+        coordinates = location.get("coordinates") or {}
+    if not isinstance(coordinates, dict):
+        coordinates = {}
+    lat = _safe_float(coordinates.get("latitude"))
+    lon = _safe_float(coordinates.get("longitude"))
+    return (lat, lon)
+
+
 '''generate a circle of points on the earth surface of radius 
    this can be viewed by pasting the results of to_geojson_string into geojson.io'''
 
@@ -193,8 +242,6 @@ def to_geojson_string(geo: Dict[str, Any], pretty: bool = True) -> str:
 # ids = polygon_property_ids(polygon, include="property_ids", supply_source="expedia")
 # print(ids)
 
-from datetime import datetime, timedelta
-
 def generate_dates(start: str, end: str, step: Union[int, timedelta]) -> List[str]:
     """
     Generate a list of dates between start and end (inclusive) with a given step.
@@ -225,8 +272,6 @@ def generate_dates(start: str, end: str, step: Union[int, timedelta]) -> List[st
     
     return dates
 
-from datetime import datetime, timedelta
-
 def add_days(date_str: str, n: int) -> str:
     """
     Add n days to a given date.
@@ -241,3 +286,171 @@ def add_days(date_str: str, n: int) -> str:
     date_obj = datetime.strptime(date_str, "%Y-%m-%d").date()
     new_date = date_obj + timedelta(days=n)
     return new_date.strftime("%Y-%m-%d")
+
+
+def fetch_rates_near_coordinate(
+    client: Any,
+    *,
+    center_lat: float,
+    center_lon: float,
+    radius_km: float,
+    checkin: Optional[str] = None,
+    checkout: Optional[str] = None,
+    occupancy: Union[int, str] = 2,
+    rate_type: str = "mkt_prepay",
+    stay_nights: int = 1,
+    days_ahead: int = 30,
+    n_points: int = 96,
+    supply_source: str = "expedia",
+    include_room_name: bool = True,
+    sort_results: bool = True,
+) -> Dict[str, Any]:
+    """
+    Retrieve the cheapest room offers for properties near a coordinate.
+
+    Args:
+        client: An ExpediaClient (or API-compatible object) used to perform calls.
+        center_lat: Search latitude in degrees.
+        center_lon: Search longitude in degrees.
+        radius_km: Search radius in kilometres.
+        checkin: Optional check-in date (YYYY-MM-DD). If omitted, defaults to today + days_ahead.
+        checkout: Optional check-out date (YYYY-MM-DD). If omitted, defaults to checkin + stay_nights.
+        occupancy: Occupancy requested when fetching availability.
+        rate_type: Key lookup into ExpediaClient.RATE_PRESETS; defaults to public package rate.
+        stay_nights: Length of stay (used when checkout omitted). Must be >= 1.
+        days_ahead: Number of days from today to use when checkin omitted.
+        n_points: Polygon vertex count used when constructing the search area.
+        supply_source: Supply source sent to the geography search endpoint.
+        include_room_name: If true, rows include the cheapest room name when available.
+        sort_results: If true, results are sorted by ascending price.
+
+    Returns:
+        Dict containing:
+            - dataframe: pandas.DataFrame of priced properties.
+            - property_ids: List of property IDs returned by the geography search.
+            - availability: Raw availability payload keyed by property ID.
+            - summaries: Property content payload keyed by property ID.
+            - rate_map: Mapping of property IDs to cheapest rate info.
+            - polygon: GeoJSON polygon used in the search.
+            - checkin / checkout: ISO formatted stay dates.
+    """
+    if stay_nights < 1:
+        raise ValueError("stay_nights must be >= 1")
+
+    occupancy_key = str(occupancy)
+
+    if checkin is None:
+        checkin_date = date.today() + timedelta(days=days_ahead)
+        checkin = checkin_date.isoformat()
+    else:
+        checkin_date = datetime.strptime(checkin, "%Y-%m-%d").date()
+
+    if checkout is None:
+        checkout_date = checkin_date + timedelta(days=stay_nights)
+        checkout = checkout_date.isoformat()
+    else:
+        checkout_date = datetime.strptime(checkout, "%Y-%m-%d").date()
+
+    polygon = circle_polygon_geojson(
+        center_lat=center_lat,
+        center_lon=center_lon,
+        radius_m=radius_km * 1000,
+        n_points=n_points,
+    )
+
+    property_ids = client.search_geography(
+        polygon,
+        include="property_ids",
+        supply_source=supply_source,
+    )
+
+    availability: Dict[str, Any] = {}
+    summaries: Dict[str, Any] = {}
+
+    if property_ids:
+        ids_list = list(property_ids)
+
+        def fetch_availability(batch: List[str]) -> Mapping[Any, Any]:
+            return client.fetch_availability(
+                batch,
+                checkin,
+                checkout,
+                occupancy_key,
+                rate_type,
+                rate_plan_count=1,
+            )
+
+        def fetch_summaries(batch: List[str]) -> Mapping[Any, Any]:
+            return client.fetch_property_summaries(
+                batch,
+                includes=("name", "location"),
+            )
+
+        client.run_batched(
+            ids_list,
+            jobs=[(fetch_availability, availability)],
+            batch_size=250,
+        )
+        client.run_batched(
+            ids_list,
+            jobs=[(fetch_summaries, summaries)],
+            batch_size=250,
+        )
+
+    rate_map = extract_cheapest_rates_by_id(
+        availability,
+        occupancy_key=occupancy_key,
+        include_room_name=include_room_name,
+    )
+
+    rows: List[Dict[str, Any]] = []
+    for pid, value in rate_map.items():
+        if value is None:
+            continue
+        if include_room_name and isinstance(value, tuple):
+            room_name, price = value
+        else:
+            room_name, price = ("", value if value is not None else None)
+
+        if price is None:
+            continue
+
+        summary = summaries.get(pid, {})
+        name = property_display_name(summary, fallback=pid)
+        lat_lon = property_coordinates(summary)
+        rows.append(
+            {
+                "Property": name,
+                "Property ID": pid,
+                "Room": room_name or "",
+                "Price (request currency)": float(price),
+                "latitude": lat_lon[0],
+                "longitude": lat_lon[1],
+            }
+        )
+
+    columns = [
+        "Property",
+        "Property ID",
+        "Room",
+        "Price (request currency)",
+        "latitude",
+        "longitude",
+    ]
+    if rows:
+        df = pd.DataFrame(rows)
+        if sort_results and "Price (request currency)" in df.columns:
+            df = df.sort_values("Price (request currency)", ignore_index=True)
+    else:
+        df = pd.DataFrame(columns=columns)
+
+    return {
+        "dataframe": df,
+        "property_ids": list(property_ids) if property_ids else [],
+        "availability": availability,
+        "summaries": summaries,
+        "rate_map": rate_map,
+        "polygon": polygon,
+        "checkin": checkin,
+        "checkout": checkout,
+    }
