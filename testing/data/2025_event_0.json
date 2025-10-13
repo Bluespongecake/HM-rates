@@ -1,0 +1,166 @@
+{
+    "id": 212718,
+    "event": {
+        "map_key": "MR6NB",
+        "affiliate_id": "OQG43H0RW1",
+        "title": "Tour Travel",
+        "sub_title": "TAURON Arena Krakow",
+        "venue_id": 481410,
+        "has_venue_id": "YES",
+        "is_venue_id_hotel": "NO",
+        "city": "Krak\u00f3w",
+        "country": "Poland",
+        "country_code": "PL",
+        "latitude": 50.0677147,
+        "longitude": 19.9913921,
+        "embed_count": 0,
+        "status": "future",
+        "event_period_in_days": 2,
+        "event_attendees": 100,
+        "date_start": "2025-10-18",
+        "date_end": "2025-10-20",
+        "eventwebsite": "www.test.com",
+        "created": "2025-09-29 00:00:00",
+        "event_owner": null,
+        "event_owner_email": null,
+        "event_recipient_field": "",
+        "pro_url": null,
+        "pro_overview": "NOT_CREATED",
+        "private_rates_id": "NOT_CREATED"
+    },
+    "company": {
+        "company_name": "BCD Media & Entertainment",
+        "account_type": "SAAS",
+        "owners": null,
+        "owners_email": null,
+        "contact_name": "",
+        "contact_email": "",
+        "contact_firstname": "",
+        "contact_lastname": "",
+        "contact_type": "NOT_AVAILABLE",
+        "saas_data": {
+            "saas_model": "TRAN",
+            "saas_billable": "N",
+            "saas_modify": "N",
+            "saas_notes": ""
+        }
+    },
+    "tabs": {
+        "tab_all": null,
+        "tab_bnbs": null,
+        "tab_cheap": null,
+        "tab_cheap_features": null,
+        "tab_contracted": null,
+        "tab_contracted_features": null,
+        "tab_deals": null,
+        "tab_deals_features": null,
+        "tab_editors": null,
+        "tab_hubs": null,
+        "tab_hubs_features": null,
+        "tab_luxury": null,
+        "tab_luxury_features": null,
+        "tab_luxury_grid": null,
+        "tab_member": null,
+        "tab_nearby": null,
+        "tab_nearby_features": null,
+        "tab_nearby_grid": null,
+        "tab_neighbourhoods": null,
+        "tab_new": null,
+        "tab_new_features": null,
+        "tab_new_grid": null,
+        "tab_private": null,
+        "tab_private_features": null,
+        "tab_promos": null,
+        "tab_promos_features": null,
+        "tab_special": null,
+        "tab_sustainable": null,
+        "tab_sustainable_features": null,
+        "tab_trip": null,
+        "tab_trip_features": null
+    },
+    "hotel_exception": [],
+    "storage_type": "DATABASE",
+    "visits": {
+        "totalviews": 0,
+        "localviews": 0,
+        "privateviews": 0,
+        "keyviews": 0,
+        "breakdown": null
+    },
+    "registrations": {
+        "post_reg": 0,
+        "registrants": 0
+    },
+    "blocks": {
+        "blocks_loaded": "NO",
+        "block_hotels_loaded": 0,
+        "block_rooms_available_peak_at_start": 0,
+        "block_rooms_available_peak_at_current": 0,
+        "duplos_integrated": "NO"
+    },
+    "hubspot": {
+        "gbp": {
+            "gross_gbp": 0,
+            "gross_cancel_gbp": 0,
+            "net_gbp": 0,
+            "net_cancel_gbp": 0,
+            "commission_gbp": 0,
+            "commission_partner_share_gbp": 0,
+            "commission_contracted_expected_gbp": 0,
+            "commission_hotelmap_expected_gbp": 0,
+            "commission_net_gbp": 0,
+            "gbp_average_nightly_rate": 0
+        },
+        "local": {
+            "currency": "???",
+            "gross": 0,
+            "gross_cancel": 0,
+            "net": 0,
+            "net_cancel": 0
+        }
+    },
+    "bookings": {
+        "unique_hotels_booked": 0,
+        "rooms": {
+            "all_rooms": 0,
+            "all_rooms_minus_cancelled": 0,
+            "all_rooms_cancelled": 0,
+            "live_rooms": -1,
+            "contract_rooms": -1,
+            "partner_collect_rooms": -1
+        },
+        "roomnights": {
+            "all_room_nights": 0,
+            "all_room_nights_minus_cancelled": 0,
+            "all_rooms_nights_cancelled": 0,
+            "live_room_nights": -1,
+            "contract_room_nights": -1,
+            "partner_collect_room_nights": -1
+        },
+        "revenue": {
+            "total_gbp": 0,
+            "net_revenue_gbp": 0,
+            "cancel_gbp": 0,
+            "total_minus_cancel_gbp": 0,
+            "contract_gbp": -1,
+            "live_gbp": -1
+        },
+        "managed": {
+            "expected": 0,
+            "received": 0,
+            "pending": 0,
+            "hotelmap_rates_expected": 0,
+            "hotelmap_rates_received": 0,
+            "contracted_expected": 0,
+            "contracted_received": 0,
+            "partner_collect_expected": 0
+        },
+        "saas": {
+            "expected": 0,
+            "received": 0,
+            "pending": 0,
+            "license_fees": 0
+        }
+    },
+    "negotiated_rates": []
+}

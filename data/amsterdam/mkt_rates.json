@@ -1,0 +1,919 @@
+[
+    {
+        "property_id": "114116366",
+        "status": "available",
+        "rooms": [
+            {
+                "id": "326323444",
+                "room_name": "Studio Suite, 1 Queen Bed",
+                "rates": [
+                    {
+                        "id": "400820194",
+                        "status": "available",
+                        "available_rooms": 13,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37310": {
+                                "id": "37310",
+                                "description": "1 Queen Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326323444/rates/400820194?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SBFGoNW1SEmRAVwAIFSBRUcMwV29IFkYYQFRAWBQzFlRRDCdUUREVEUQLTQEUAxowQVxWWkQZG0hFA1tMWEcaFg4BGW-GZDFXVvhlY1YCUU0JUNE1ZNliPMQ5Zr8xNfM2Z61nZ5dkOc9mEFdTClQFVAdSSw0PUwdMBVIBURpXW1YFSFUHAw0HUlMHUAQDB9A3fwoJBlAeAVEcAwUwVAACVwFcCwQXUQAFUA4DVVMIatkyZ04HmTZkiXBhyA=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "QueenBed",
+                                        "size": "Queen",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "32.02",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "37.01",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "251.10",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "352.48",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "352.48",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "320.13",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "320.13",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "352.48",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "352.48",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "251.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "251.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "279.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "279.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "320.13",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "320.13",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 9%"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "326323445",
+                "room_name": "Studio Suite, 1 Queen Bed, Balcony",
+                "rates": [
+                    {
+                        "id": "400820195",
+                        "status": "available",
+                        "available_rooms": 15,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37310": {
+                                "id": "37310",
+                                "description": "1 Queen Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326323445/rates/400820195?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SBFGoNW1SEmRAVwAIFSBRUcMwV29IFkYYQFRAWBQzFlRRDCdUUREVEUQLTQEUAxowQVxWWkQZG0hFA1tMWEcaFg4BGW-GZDFXVvhlY1YDUU0NVtE1ZNliPMQ5Zr8xNfM2Z61nZ5dkOc9mEFdTClQFVAdSSw0PUwdMBVIBURpXW1YFSFUHAw0HUlMHUAQDB9A3fwoJBlAeAVEcAwUwVAACVwFcCwQXUQAFUA4DVVMIatkyZ04HmTZk2jssZw=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "QueenBed",
+                                        "size": "Queen",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "33.01",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "37.44",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "260.10",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "364.07",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "364.07",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "330.55",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "330.55",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "364.07",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "364.07",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "260.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "260.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "289.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "289.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "330.55",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "330.55",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 9%"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "326323446",
+                "room_name": "Studio, 1 King Bed, Balcony, Corner",
+                "rates": [
+                    {
+                        "id": "400820196",
+                        "status": "available",
+                        "available_rooms": 7,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37321": {
+                                "id": "37321",
+                                "description": "1 King Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326323446/rates/400820196?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SB1CoNWxSEn5cXAJGdwdQl2AePU8RQEsRVRNYQH0LDVZ2BwETGRFKWk0HFV4UclEPUxsfFhdAWFdEC0FBEwlSSWmCZTAGUflkZAFUXEsAV4M5Ytk1YcFiOrw6ZacxNfs2Z5VnZ51kHAZUDFUFUVQAGl8HUAYUUQZYBUxZBlYBFQFXUVYBVQ5UA1UGVIYwLlAFUw0UBVUeAFNlAgReVAQCVANIDQUKUQIBUwgMONkyMhUDnTo1-osKWA=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "KingBed",
+                                        "size": "King",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "30.95",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "36.55",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "241.56",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "375.66",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "375.66",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "309.06",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "309.06",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "375.66",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "375.66",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "241.56",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "241.56",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "299.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "299.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "309.06",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "309.06",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 18%"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "326323442",
+                "room_name": "Studio, 1 King Bed",
+                "rates": [
+                    {
+                        "id": "400820192",
+                        "status": "available",
+                        "available_rooms": 35,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37321": {
+                                "id": "37321",
+                                "description": "1 King Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326323442/rates/400820192?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SB1CoNWxSEn5cXAJGdwdQl2AePU8RQEsRVRNYQH0LDVZ2BwETGRFKWk0HFV4UclEPUxsfFhdAWFdEC0FBEwlSSWmCZTAGUflkZABTXUsDWYM5Ytk1YcFiOrw6ZacxNfs2Z5VnZ51kHAZUDFUFUVQAGl8HUAYUUQZYBUxZBlYBFQFXUVYBVQ5UA1UGVIYwLlAFUw0UBVUeAFNlAgReVAQCVANIDQUKUQIBUwgMONkyMhUDnTo1RLXqtQ=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "KingBed",
+                                        "size": "King",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "27.99",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "35.29",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "239.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "239.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 9%"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "326323443",
+                "room_name": "Studio, 1 King Bed, Balcony",
+                "rates": [
+                    {
+                        "id": "400820193",
+                        "status": "available",
+                        "available_rooms": 56,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37321": {
+                                "id": "37321",
+                                "description": "1 King Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326323443/rates/400820193?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SB1CoNWxSEn5cXAJGdwdQl2AePU8RQEsRVRNYQH0LDVZ2BwETGRFKWk0HFV4UclEPUxsfFhdAWFdEC0FBEwlSSWmCZTAGUflkZABdXEsCVIM5Ytk1YcFiOrw6ZacxNfs2Z5VnZ51kHAZUDFUFUVQAGl8HUAYUUQZYBUxZBlYBFQFXUVYBVQ5UA1UGVIYwLlAFUw0UBVUeAFNlAgReVAQCVANIDQUKUQIBUwgMONkyMhUDnTo17pnVNw=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "KingBed",
+                                        "size": "King",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "30.00",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "36.15",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "233.10",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "329.28",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "329.28",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "299.25",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "299.25",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "329.28",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "329.28",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "233.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "233.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "259.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "259.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "299.25",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "299.25",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 9%"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "326351700",
+                "room_name": "Studio Accessible (ADA)",
+                "rates": [
+                    {
+                        "id": "400884669",
+                        "status": "available",
+                        "available_rooms": 7,
+                        "refundable": true,
+                        "member_deal_available": true,
+                        "sale_scenario": {
+                            "package": true,
+                            "member": false,
+                            "corporate": false,
+                            "distribution": false
+                        },
+                        "merchant_of_record": "expedia",
+                        "amenities": {
+                            "2192": {
+                                "id": "2192",
+                                "name": "Free WiFi"
+                            }
+                        },
+                        "links": {
+                            "payment_options": {
+                                "method": "GET",
+                                "href": "/v3/properties/114116366/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcFWwBXWgNXH18ABAYbAwAPBx1UVAMDSAJRVQNbUwMFB1RUBR8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWVQIBQYBUgJVFFIOB1UVVV0FBUwLVV5XHwcGVwFeBAFRBVgJVxJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OBQBRAAoDVgYVAwAGUhkEXFEBSFJdBgNJVAcCVgYOBwEFAFUHHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAELMQUFQQt1U1QVAyICUBYAVQdRVARRUV1pFFBXEVdMEB1vAldVB19ta0UDVkRaAglUFFIKBAUOWAxbUVVUVxoGU08DAR5ABERBWlZFOxEQW1BZCV06XAYND1MLUF4JH1ZBEUoDXwVKCGw3JxIHUQFXDVxDTVgHVFYATlAAFFMGFBVDQkRaXlZEbFlRClAAQ3dcBFVTQkBYCVdWCwpXAwMCAFI="
+                            }
+                        },
+                        "bed_groups": {
+                            "37321": {
+                                "id": "37321",
+                                "description": "1 King Bed",
+                                "links": {
+                                    "price_check": {
+                                        "method": "GET",
+                                        "href": "/v3/properties/114116366/rooms/326351700/rates/400884669?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1cIez8GUwpTHFcCGAhWKTcxaiBmQlAGWgEAV1ZTTlIGD1UZBgNSAhkPVgsCHgIGUgYMVFdRUQ8AAG8RBQIBCwpWBAUYClVdVkkCC1RUHgIAUFVMBVoAVlxQUVUAUl0BUWUFBwZQC1RLMgUDCQVJZQe6Z2FhMnG5OGAJo2M9Ug9SB1CoNWxSEn5cXAJGdwdQl2AePU8RQEsRVRNYQH0LDVZ2BwETGRFKWk0HFV4UclEPUxsfFhdAWFdEC0FBEwlSSWmCZTAGUflkZABTXUsDWYM5Ytk1YcFiOrw6ZacxNfs2Z5VnZ51kHAZUDFUFUVQAGl8HUAYUUQZYBUxZBlYBFQFXUVYBVQ5UA1UGVIYwLlAFUw0UBVUeAFNlAgReVAQCVANIDQUKUQIBUwgMONkyMhUDnTo1RLXqtQ=="
+                                    }
+                                },
+                                "configuration": [
+                                    {
+                                        "type": "KingBed",
+                                        "size": "King",
+                                        "quantity": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel_penalties": [
+                            {
+                                "start": "2025-11-09T16:00:00.000-08:00",
+                                "end": "2025-11-11T16:00:00.000-08:00",
+                                "nights": "1",
+                                "currency": "USD"
+                            }
+                        ],
+                        "occupancy_pricing": {
+                            "2": {
+                                "nightly": [
+                                    [
+                                        {
+                                            "type": "tax_and_service_fee",
+                                            "value": "27.99",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "property_fee",
+                                            "value": "35.29",
+                                            "currency": "USD"
+                                        },
+                                        {
+                                            "type": "base_rate",
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        }
+                                    ]
+                                ],
+                                "totals": {
+                                    "inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "inclusive": {
+                                        "request_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive_strikethrough": {
+                                        "request_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "306.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "exclusive": {
+                                        "request_currency": {
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "215.10",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "strikethrough": {
+                                        "request_currency": {
+                                            "value": "239.00",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "239.00",
+                                            "currency": "USD"
+                                        }
+                                    },
+                                    "property_inclusive": {
+                                        "request_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        },
+                                        "billable_currency": {
+                                            "value": "278.38",
+                                            "currency": "USD"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "promotions": {
+                            "deal": {
+                                "id": "850265670",
+                                "description": "Save 9%"
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "links": {
+            "additional_rates": {
+                "method": "GET",
+                "href": "/v3/properties/114116366/availability?token=Ql1WAERHXV1QOxULUAtTVQAEUwFRWk8AUFALFAEHWgxLUAVSAhRSBgBRWgYCVgAGCFITFw1BBj5FQBJRDxJEU1BfQ1pZXVFZaABGCkNHBEQeXlZWQRQEXFocDQQTXR5bXBFFWlgPDkVUVQoGQVlVBAQDW0hkZB8XUhdWaVsWRw1WWA0VQ1pGFlRdWxBVEVlXFBJRXhIeBFkRXAUPBEAAWlBWWQwICFAEB1QcVwUeBQNHQFAQFlgHEW5EEApXXF9cbF4GClIHCw5ZBB9QQRRHXFdTGwhtYndFXkFCDUFQDFARC10KOgZfBQYFNmJ1Q1wCSl9dEF5dUzxXDlQLCFIKBVVCV1wGUV4MQhIMVAQLUBhQAEwJVxFCSF5WWFZSDghCQw1YE0RbXgVqEVlNXFhgZCB_d3YoKn19QEQDX1RLF11YA2dHDRZCUwYNF1lECFBIEVsJEUNQR0BMC1RdEDtDBEtCCw1WZwoCClcDBVBRAQMETFVSB1VLVwACUhoOA1oGHQoDAFINBVBSVFhaBRBDBFQARj1TUQNXCANVBEJRAUsPRQMVRlwXEF0LVztdAg4HXwEMV1cBUEwDCgdSH1IOUQEbVgtSAh0EVVADAAJQUQddVVETRgURV2YVXFdbZwVXRQpCDgVUA0VLVQgER2dXD08PRwpfWlwLR15bWUADXztJV1NYUVJWQlBdCAdGAERWXT5NWA9dXApRB1QfBVZOAgdhA1ZDBiMFAkQCJwYGGgZVAwVUVQFSW2sSBAxdQVZLDhEBWBFYTUoYa1pcUAMIbGoWIV1dUlgQQVkNVgQFVQtVVQBdVA=="
+            },
+            "recommendations": {
+                "method": "GET",
+                "href": "/v3/properties/availability?token=REhZAQsABAoHQhIKW0ZADFYCahJRTQoENTJ4d3F1L3codEBBUF8BEUYNVwNrFVxDSwZQWRZUEwhVFBFcXRYQQFFQUkFEWl5SaBZdAQlXUQ5ZV1ZUV0lcBA9XHQIGAVIVUQdXBBpXVlcNVwZXBAsCUA5ARgxFUmYRShNWC0AUUgBQQllcXlRfO1VKCRVHBEIVVgJaRBJZD1sYCFMUVxMQRlpYVxc5RgdHRgheCGtaUA8CAFIGVwVQBRwHVVMGGAdcVwdPDgUODRVTB1xXDFdWXAkJWgQeQlIPUUdvB1pVC10ADg8TAAdDCBddRUJRFkIKV1pnDVMOBQVQXwZWUgRLClYBUhlXClZWGgcJAgUUVFdTBgQOAQcHXVNWQw8DWV8RUQJSXlFcHTdmR0pYQABsXxFFWlgKWBVLCUMUWlQEF1VGDVwZEQtfQEVCBExRPkQJA105AgpGXEcFVgkeEQVcBEtuBwxOUREJWVlWCEBZWl4WBAo6QQMFCAQBBxFQBwxXQllEAFJqQFpaAVxQBAQFSAlVGFICbVMKQ1V4CAIRUHlUBEgHAQpQVQNTCVxuQFVfVRFQFlkTAA5EVxZGSzlVXVBTCmZlFVVURwtQWAQSAl5dUl5cWllXAgtQHQcEFVcJFhRXQUMPVhFnRBYOUlFeBGYPUVgHBgtTC1MVVUEUQQFXVUkOZWZ3QlpZFAlRFVldXj5aWQNWD10NCFEUVw4GUV5aRxFbB1IGAEwAVxkCBhQTVVcHEFMMAFRrEhdeRVZLR049XgALCAlVBQgFB1ADH3pYB1ZTQkYOCQwGVQcFUwpcUA=="
+            }
+        },
+        "score": 0
+    }
+]

@@ -1,0 +1,166 @@
+{
+    "id": 212665,
+    "event": {
+        "map_key": "MTFEG",
+        "affiliate_id": "S4CLLJCTH3",
+        "title": "Bankbilanzierung",
+        "sub_title": "Handelsblatt Media Group",
+        "venue_id": 480694,
+        "has_venue_id": "YES",
+        "is_venue_id_hotel": "NO",
+        "city": "D\u00fcsseldorf",
+        "country": "Germany",
+        "country_code": "DE",
+        "latitude": 51.235928,
+        "longitude": 6.795669,
+        "embed_count": 0,
+        "status": "future",
+        "event_period_in_days": 3,
+        "event_attendees": 10,
+        "date_start": "2026-04-27",
+        "date_end": "2026-04-30",
+        "eventwebsite": "",
+        "created": "2025-09-24 14:17:22",
+        "event_owner": null,
+        "event_owner_email": null,
+        "event_recipient_field": "i.kreuzberg@handelsblattgroup.com",
+        "pro_url": "EUROFORUM",
+        "pro_overview": "https://pro.hotelmap.com/overview/EUROFORUM",
+        "private_rates_id": "https://HotelMap.com/events/MTFEG-LV/RLwFvsClg5XglcGd"
+    },
+    "company": {
+        "company_name": "EUROFORUM Deutschland GmbH",
+        "account_type": "MANG",
+        "owners": "Sophie Milne",
+        "owners_email": "sophie_milne@hotelmap.com",
+        "contact_name": "",
+        "contact_email": "i.kreuzberg@handelsblattgroup.com",
+        "contact_firstname": "",
+        "contact_lastname": "",
+        "contact_type": "RECIPIENT",
+        "saas_data": {
+            "saas_model": "",
+            "saas_billable": "N",
+            "saas_modify": "N",
+            "saas_notes": ""
+        }
+    },
+    "tabs": {
+        "tab_all": 0,
+        "tab_bnbs": 0,
+        "tab_cheap": 0,
+        "tab_cheap_features": 0,
+        "tab_contracted": 0,
+        "tab_contracted_features": 0,
+        "tab_deals": 0,
+        "tab_deals_features": 0,
+        "tab_editors": 1,
+        "tab_hubs": 0,
+        "tab_hubs_features": 1,
+        "tab_luxury": 0,
+        "tab_luxury_features": 0,
+        "tab_luxury_grid": 0,
+        "tab_member": 0,
+        "tab_nearby": 1,
+        "tab_nearby_features": 1,
+        "tab_nearby_grid": 0,
+        "tab_neighbourhoods": 0,
+        "tab_new": 0,
+        "tab_new_features": 0,
+        "tab_new_grid": 0,
+        "tab_private": 0,
+        "tab_private_features": 0,
+        "tab_promos": 0,
+        "tab_promos_features": 0,
+        "tab_special": 0,
+        "tab_sustainable": 0,
+        "tab_sustainable_features": 0,
+        "tab_trip": 1,
+        "tab_trip_features": 0
+    },
+    "hotel_exception": [],
+    "storage_type": "DATABASE",
+    "visits": {
+        "totalviews": 0,
+        "localviews": 0,
+        "privateviews": 0,
+        "keyviews": 0,
+        "breakdown": null
+    },
+    "registrations": {
+        "post_reg": 0,
+        "registrants": 0
+    },
+    "blocks": {
+        "blocks_loaded": "NO",
+        "block_hotels_loaded": 0,
+        "block_rooms_available_peak_at_start": 0,
+        "block_rooms_available_peak_at_current": 0,
+        "duplos_integrated": "NO"
+    },
+    "hubspot": {
+        "gbp": {
+            "gross_gbp": 0,
+            "gross_cancel_gbp": 0,
+            "net_gbp": 0,
+            "net_cancel_gbp": 0,
+            "commission_gbp": 0,
+            "commission_partner_share_gbp": 0,
+            "commission_contracted_expected_gbp": 0,
+            "commission_hotelmap_expected_gbp": 0,
+            "commission_net_gbp": 0,
+            "gbp_average_nightly_rate": 0
+        },
+        "local": {
+            "currency": "???",
+            "gross": 0,
+            "gross_cancel": 0,
+            "net": 0,
+            "net_cancel": 0
+        }
+    },
+    "bookings": {
+        "unique_hotels_booked": 0,
+        "rooms": {
+            "all_rooms": 0,
+            "all_rooms_minus_cancelled": 0,
+            "all_rooms_cancelled": 0,
+            "live_rooms": -1,
+            "contract_rooms": -1,
+            "partner_collect_rooms": -1
+        },
+        "roomnights": {
+            "all_room_nights": 0,
+            "all_room_nights_minus_cancelled": 0,
+            "all_rooms_nights_cancelled": 0,
+            "live_room_nights": -1,
+            "contract_room_nights": -1,
+            "partner_collect_room_nights": -1
+        },
+        "revenue": {
+            "total_gbp": 0,
+            "net_revenue_gbp": 0,
+            "cancel_gbp": 0,
+            "total_minus_cancel_gbp": 0,
+            "contract_gbp": -1,
+            "live_gbp": -1
+        },
+        "managed": {
+            "expected": 0,
+            "received": 0,
+            "pending": 0,
+            "hotelmap_rates_expected": 0,
+            "hotelmap_rates_received": 0,
+            "contracted_expected": 0,
+            "contracted_received": 0,
+            "partner_collect_expected": 0
+        },
+        "saas": {
+            "expected": 0,
+            "received": 0,
+            "pending": 0,
+            "license_fees": 0
+        }
+    },
+    "negotiated_rates": []
+}
