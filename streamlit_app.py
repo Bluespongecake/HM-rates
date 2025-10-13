@@ -1,9 +1,10 @@
 """Streamlit interface for exploring hotel rates near a coordinate."""
 
 from datetime import date, timedelta
-from typing import Mapping
+from typing import Mapping, Optional
 
 import pandas as pd
+import pydeck as pdk
 import streamlit as st
 
 # Ensure python-dotenv absence does not break imports on Streamlit Cloud.
@@ -23,6 +24,7 @@ except ModuleNotFoundError:  # pragma: no cover - handled in production
 
 from expedia.client import ExpediaAPIError, ExpediaClient
 from expedia.helpers import fetch_rates_near_coordinate
+from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 
 DEFAULT_OCCUPANCY = 2
@@ -35,6 +37,133 @@ DEFAULT_RADIUS_KM = 3
 DEFAULT_CHECKIN_OFFSET_DAYS = 30
 DEFAULT_CHECKIN_DATE = date.today() + timedelta(days=DEFAULT_CHECKIN_OFFSET_DAYS)
 DEFAULT_CHECKOUT_DATE = DEFAULT_CHECKIN_DATE + timedelta(days=DEFAULT_STAY_NIGHTS)
+DEFAULT_DECK_MAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+
+
+def _get_user_agent() -> str:
+    """Return the current browser user-agent string if available."""
+    if "_user_agent" in st.session_state:
+        return st.session_state["_user_agent"] or ""
+
+    user_agent: Optional[str] = None
+
+    ctx = get_script_run_ctx()
+    if ctx is not None and getattr(ctx, "user_info", None):
+        user_info = ctx.user_info
+        if isinstance(user_info, Mapping):
+            # Common keys exposed by Streamlit runtime
+            for key in ("user_agent", "context_user_agent"):
+                value = user_info.get(key)
+                if isinstance(value, str) and value:
+                    user_agent = value
+                    break
+            if user_agent is None:
+                browser_info = user_info.get("browser")
+                if isinstance(browser_info, Mapping):
+                    for key in ("user_agent", "userAgent", "browser_user_agent"):
+                        value = browser_info.get(key)
+                        if isinstance(value, str) and value:
+                            user_agent = value
+                            break
+            if user_agent is None:
+                headers = user_info.get("headers")
+                if isinstance(headers, Mapping):
+                    header_val = headers.get("User-Agent") or headers.get("user-agent")
+                    if isinstance(header_val, str) and header_val:
+                        user_agent = header_val
+
+    st.session_state["_user_agent"] = user_agent or ""
+    return st.session_state["_user_agent"]
+
+
+def _is_safari() -> bool:
+    """Detect Safari browsers so we can fall back to a pydeck map."""
+    if "_is_safari" in st.session_state:
+        return bool(st.session_state["_is_safari"])
+
+    user_agent = _get_user_agent().lower()
+    is_safari = bool(user_agent) and "safari" in user_agent and "chrome" not in user_agent and "android" not in user_agent
+    st.session_state["_is_safari"] = is_safari
+    return is_safari
+
+
+def _render_pydeck_map(points: pd.DataFrame) -> None:
+    if points.empty:
+        st.info("No coordinates available to plot.")
+        return
+
+    data = points.copy()
+    data["latitude"] = data["latitude"].astype(float)
+    data["longitude"] = data["longitude"].astype(float)
+
+    selected = data[data["label"] == "Selected coordinate"]
+    hotels = data[data["label"] == "Hotel"]
+
+    layers = []
+    if not selected.empty:
+        layers.append(
+            pdk.Layer(
+                "ScatterplotLayer",
+                data=selected,
+                get_position="[longitude, latitude]",
+                get_radius=120,
+                get_fill_color=[30, 144, 255],
+                pickable=True,
+            )
+        )
+    if not hotels.empty:
+        layers.append(
+            pdk.Layer(
+                "ScatterplotLayer",
+                data=hotels,
+                get_position="[longitude, latitude]",
+                get_radius=100,
+                get_fill_color=[164, 53, 255],
+                pickable=True,
+            )
+        )
+    if not layers:
+        layers.append(
+            pdk.Layer(
+                "ScatterplotLayer",
+                data=data,
+                get_position="[longitude, latitude]",
+                get_radius=100,
+                get_fill_color=[30, 144, 255],
+                pickable=True,
+            )
+        )
+
+    view_state = pdk.ViewState(
+        latitude=float(data["latitude"].mean()),
+        longitude=float(data["longitude"].mean()),
+        zoom=12 if len(data) > 1 else 13,
+        pitch=0,
+    )
+
+    mapbox_token = ""
+    if "mapbox_token" in st.secrets:
+        mapbox_token = st.secrets.get("mapbox_token", "") or ""
+
+    deck = pdk.Deck(
+        layers=layers,
+        initial_view_state=view_state,
+        map_style="mapbox://styles/mapbox/streets-v11" if mapbox_token else DEFAULT_DECK_MAP_STYLE,
+        mapbox_key=mapbox_token or None,
+        tooltip={"text": "{label}\nLat: {latitude:.6f}\nLon: {longitude:.6f}"},
+    )
+    st.pydeck_chart(deck, use_container_width=True)
+
+
+def _render_map(points: pd.DataFrame) -> None:
+    if points.empty:
+        st.info("No coordinates available to plot.")
+        return
+
+    if _is_safari():
+        _render_pydeck_map(points)
+    else:
+        st.map(points[["latitude", "longitude"]], use_container_width=True)
 
 
 def _load_expedia_credentials() -> Mapping[str, str]:
@@ -68,8 +197,8 @@ def get_client() -> ExpediaClient:
     )
 
 
-st.set_page_config(page_title="Hotel Rates Explorer", page_icon="🏨", layout="wide")
-st.title("Hotel Rates Near a Coordinate")
+st.set_page_config(page_title="HM Discounts Explorer", page_icon="🏨", layout="wide")
+st.title("Non-contracted Hotel Discounts near an Event")
 st.caption(
     "Enter a latitude, longitude, and radius (km) to look up the cheapest available room "
     "rate for each property returned by Expedia EPS Rapid."
@@ -124,6 +253,8 @@ if submit:
         st.session_state["search_error"] = "Check-out date must be after the check-in date."
         st.session_state["search_result"] = None
     else:
+        checkin_str = checkin_date.isoformat()
+        checkout_str = checkout_date.isoformat()
         stay_nights = (checkout_date - checkin_date).days
         with st.spinner("Contacting Expedia..."):
             try:
@@ -137,10 +268,14 @@ if submit:
                     occupancy=DEFAULT_OCCUPANCY,
                     rate_type=DEFAULT_RATE_TYPE,
                     n_points=SEARCH_POINT_DENSITY,
-                    checkin=checkin_date.isoformat(),
-                    checkout=checkout_date.isoformat(),
+                    checkin=checkin_str,
+                    checkout=checkout_str,
                 )
+                result["checkin"] = checkin_str
+                result["checkout"] = checkout_str
                 st.session_state["search_result"] = result
+                st.session_state["last_checkin"] = checkin_str
+                st.session_state["last_checkout"] = checkout_str
             except ExpediaAPIError as exc:
                 st.session_state["search_error"] = f"Expedia API error: {exc}"
                 st.session_state["search_result"] = None
@@ -172,7 +307,7 @@ if result:
 else:
     map_points = selected_point
 
-st.map(map_points[["latitude", "longitude"]], use_container_width=True)
+_render_map(map_points)
 
 if error_message:
     st.error(error_message)
@@ -191,7 +326,6 @@ elif result:
             st.dataframe(df, use_container_width=True)
 
 st.caption(
-    "The app queries public package rates (`mkt_prepay`) for stays starting 30 days from today "
-    f"and lasting {DEFAULT_STAY_NIGHTS} night(s). Adjust the script if you need different rate types "
-    "or travel dates."
+    "The app looks up Expedia EPS Rapid public package rates (`mkt_prepay`) for the coordinates, radius, "
+    "and stay dates you provide. Adjust the inputs above to explore different areas or travel windows."
 )
