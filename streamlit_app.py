@@ -1,6 +1,7 @@
 """Streamlit interface for exploring hotel rates near a coordinate."""
 
 from datetime import date, timedelta
+from typing import Mapping
 
 import pandas as pd
 import streamlit as st
@@ -21,10 +22,35 @@ DEFAULT_CHECKIN_DATE = date.today() + timedelta(days=DEFAULT_CHECKIN_OFFSET_DAYS
 DEFAULT_CHECKOUT_DATE = DEFAULT_CHECKIN_DATE + timedelta(days=DEFAULT_STAY_NIGHTS)
 
 
+def _load_expedia_credentials() -> Mapping[str, str]:
+    """Read Expedia credentials from Streamlit secrets."""
+    try:
+        secrets = st.secrets["expedia"]
+    except KeyError as exc:  # pragma: no cover - configuration error surfaced to user
+        raise RuntimeError(
+            "Missing 'expedia' section in Streamlit secrets. "
+            "Add api_key, shared_secret, and api_base to deploy the app."
+        ) from exc
+
+    required = ("api_key", "shared_secret", "api_base")
+    missing = [key for key in required if not secrets.get(key)]
+    if missing:
+        raise RuntimeError(
+            f"Missing required Expedia secrets: {', '.join(missing)}. "
+            "Populate them in .streamlit/secrets.toml or the Streamlit deployment settings."
+        )
+    return secrets
+
+
 @st.cache_resource(show_spinner=False)
 def get_client() -> ExpediaClient:
-    """Instantiate a cached Expedia client using environment credentials."""
-    return ExpediaClient.from_env()
+    """Instantiate a cached Expedia client using credentials from Streamlit secrets."""
+    creds = _load_expedia_credentials()
+    return ExpediaClient(
+        creds["api_key"],
+        creds["shared_secret"],
+        creds["api_base"],
+    )
 
 
 st.set_page_config(page_title="Hotel Rates Explorer", page_icon="🏨", layout="wide")
