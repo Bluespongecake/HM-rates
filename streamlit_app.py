@@ -6,6 +6,21 @@ from typing import Mapping
 import pandas as pd
 import streamlit as st
 
+# Ensure python-dotenv absence does not break imports on Streamlit Cloud.
+try:  # pragma: no cover - import guard for deployment environments
+    import dotenv  # type: ignore  # noqa: F401
+except ModuleNotFoundError:  # pragma: no cover - handled in production
+    import sys
+    import types
+
+    dotenv = types.ModuleType("dotenv")
+
+    def _load_dotenv_stub(*args, **kwargs):  # type: ignore[unused-arg]
+        return None
+
+    dotenv.load_dotenv = _load_dotenv_stub  # type: ignore[attr-defined]
+    sys.modules["dotenv"] = dotenv
+
 from expedia.client import ExpediaAPIError, ExpediaClient
 from expedia.helpers import fetch_rates_near_coordinate
 
