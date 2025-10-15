@@ -1,6 +1,7 @@
 import pytest
 
 import expedia.helpers
+from expedia.client import ExpediaAPIError, ExpediaClient
 
 
 @pytest.fixture
@@ -128,6 +129,15 @@ def test_to_geojson_string_roundtrip():
     assert '"type":"Polygon"' in json_str
 
 
+def test_haversine_distance_approximates_equator_arc():
+    distance = expedia.helpers.haversine_distance(0.0, 0.0, 0.0, 1.0)
+    assert distance == pytest.approx(111_319.49, rel=1e-3)
+
+
+def test_haversine_distance_zero_when_points_identical():
+    assert expedia.helpers.haversine_distance(52.0, 5.0, 52.0, 5.0) == pytest.approx(0.0)
+
+
 def test_generate_dates_and_add_days():
     dates = expedia.helpers.generate_dates("2024-01-01", "2024-01-03", step=1)
     assert dates == ["2024-01-01", "2024-01-02", "2024-01-03"]
@@ -151,3 +161,100 @@ def test_property_coordinates_extracts_lat_lon():
 
 def test_property_coordinates_handles_missing_values():
     assert expedia.helpers.property_coordinates({}) == (None, None)
+
+
+class DummyClient:
+    RATE_PRICES = {
+        "mkt_prepay": {"P1": 210.0, "P2": 180.0},
+        "priv_prepay": {"P1": 170.0, "P2": 200.0},
+    }
+
+    def search_geography(
+        self,
+        polygon,
+        include="property_ids",
+        supply_source="expedia",
+        checkin=None,
+        checkout=None,
+    ):
+        return ["P1", "P2"]
+
+    def fetch_availability(
+        self,
+        batch,
+        checkin,
+        checkout,
+        occupancy,
+        rate_type,
+        rate_plan_count=1,
+    ):
+        prices = self.RATE_PRICES[rate_type]
+
+        def _rate(price):
+            return {
+                "occupancy_pricing": {
+                    "2": {
+                        "totals": {
+                            "inclusive": {
+                                "request_currency": {
+                                    "value": str(price),
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        results = {}
+        for pid in batch:
+            price = prices[pid]
+            results[pid] = {
+                "rooms": [
+                    {"room_name": f"{rate_type}-room", "rates": [_rate(price)]},
+                ]
+            }
+        return results
+
+    def fetch_property_summaries(self, batch, includes=("name", "location")):
+        return {
+            pid: {
+                "property_name": f"Hotel {pid}",
+                "location": {"coordinates": {"latitude": 10.0 + idx, "longitude": 20.0 + idx}},
+            }
+            for idx, pid in enumerate(batch)
+        }
+
+    def run_batched(self, ids, jobs, batch_size=250):
+        # Simplified batching: single batch containing all ids
+        for func, sink in jobs:
+            result = func(ids)
+            sink.update(result)
+
+
+def test_fetch_rates_near_coordinate_multiple_rate_types():
+    client = DummyClient()
+    result = expedia.helpers.fetch_rates_near_coordinate(
+        client,
+        center_lat=0.0,
+        center_lon=0.0,
+        radius_km=1,
+        checkin="2025-01-01",
+        checkout="2025-01-02",
+        rate_type=["mkt_prepay", "priv_prepay"],
+        rate_type_labels={"mkt_prepay": "Public Package", "priv_prepay": "Private Prepay"},
+        sort_results=False,
+    )
+
+    df = result["dataframe"]
+    assert "Price (Public Package)" in df.columns
+    assert "Price (Private Prepay)" in df.columns
+    assert df.loc[df["Property ID"] == "P1", "Price (request currency)"].iloc[0] == 210.0
+    assert result["rate_types"] == ["mkt_prepay", "priv_prepay"]
+    assert set(result["availability_by_rate_type"].keys()) == {"mkt_prepay", "priv_prepay"}
+
+
+def test_search_geography_rejects_past_dates():
+    client = ExpediaClient("key", "secret", "https://example.com")
+    polygon = {"type": "Polygon", "coordinates": [[[0.0, 0.0], [1.0, 0.0], [0.0, 1.0], [0.0, 0.0]]]}
+    with pytest.raises(ExpediaAPIError, match="stay dates before today"):
+        client.search_geography(polygon, checkin="2000-01-01")

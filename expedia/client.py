@@ -1,5 +1,6 @@
 import requests, time, hashlib
 import os
+from datetime import date, datetime
 from dotenv import load_dotenv
 from typing import Dict, Optional, Union, Any, List, Tuple, Callable, Iterable, Mapping
 import json
@@ -266,8 +267,26 @@ class ExpediaClient:
         customer_session_id: Optional[str] = None,
         endpoint_path: str = "v3/properties/geography",
         timeout: Optional[int] = None,
+        checkin: Optional[str] = None,
+        checkout: Optional[str] = None,
     ) -> List[str]:
         """Retrieve property IDs matching a polygon/shape search request."""
+        if checkin:
+            try:
+                checkin_date = datetime.strptime(checkin, "%Y-%m-%d").date()
+            except ValueError as exc:  # invalid formatted input
+                raise ExpediaAPIError("search_geography checkin must be YYYY-MM-DD.") from exc
+            if checkin_date < date.today():
+                raise ExpediaAPIError("search_geography does not support stay dates before today.")
+
+        if checkout:
+            try:
+                checkout_date = datetime.strptime(checkout, "%Y-%m-%d").date()
+            except ValueError as exc:
+                raise ExpediaAPIError("search_geography checkout must be YYYY-MM-DD.") from exc
+            if checkout_date < date.today():
+                raise ExpediaAPIError("search_geography does not support stay dates before today.")
+
         params: Dict[str, Any] = {"include": include}
         if supply_source:
             params["supply_source"] = supply_source

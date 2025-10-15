@@ -1,0 +1,3322 @@
+[
+    {
+        "id": 212820,
+        "event": {
+            "map_key": "MACV8",
+            "affiliate_id": "196S8HU8NL",
+            "title": "(DRAFT) RW Baird Convention",
+            "sub_title": "Baird Center",
+            "venue_id": 483322,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Milwaukee",
+            "country": "United States",
+            "country_code": "US",
+            "latitude": 43.040099,
+            "longitude": -87.917473,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 5,
+            "event_attendees": 2500,
+            "date_start": "2028-06-11",
+            "date_end": "2028-06-16",
+            "eventwebsite": "",
+            "created": "2025-10-03 23:17:42",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "eli@fht.global",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "https://HotelMap.com/events/MACV8-LV/RYZPqVwGXlqCpQth"
+        },
+        "company": {
+            "company_name": "FHT Global",
+            "account_type": "MANG",
+            "owners": "Sophie Milne",
+            "owners_email": "sophie_milne@hotelmap.com",
+            "contact_name": "",
+            "contact_email": "eli@fht.global",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "RECIPIENT",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212630,
+        "event": {
+            "map_key": "M8QAL",
+            "affiliate_id": "B2DYFKHY3N",
+            "title": "64th Annual Meeting - EASD2028",
+            "sub_title": "Bella Center Copenhagen",
+            "venue_id": 483207,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "K\u00f8benhavn S",
+            "country": "Denmark",
+            "country_code": "DK",
+            "latitude": 55.638011,
+            "longitude": 12.578839,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 2,
+            "event_attendees": 0,
+            "date_start": "2028-09-18",
+            "date_end": "2028-09-20",
+            "eventwebsite": "",
+            "created": "2025-09-23 06:43:54",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "hotels.easd@interplan.de",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "Interplan",
+            "account_type": "SAAS",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "a.gruenebaum@interplan.de",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "CONTACT",
+            "saas_data": {
+                "saas_model": "MERC",
+                "saas_billable": "Y",
+                "saas_modify": "Y",
+                "saas_notes": "Starting from 12th October 2023 until 31st\r\nDecember 2024, Partner agrees to\r\npay for a minimum of Zero Transaction Fees, and 100,000 minimum Transaction Fees per annum in subsequent years."
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 0,
+            "tab_hubs": 1,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 1,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 1,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 1,
+            "tab_sustainable_features": 1,
+            "tab_trip": 0,
+            "tab_trip_features": 1
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212497,
+        "event": {
+            "map_key": "MAXWC",
+            "affiliate_id": "7PH37KRL8S",
+            "title": "GBTA Convention 2028",
+            "sub_title": "Pennsylvania Convention Center",
+            "venue_id": 482126,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Philadelphia",
+            "country": "United States",
+            "country_code": "US",
+            "latitude": 39.95491,
+            "longitude": -75.160347,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 2,
+            "event_attendees": 5500,
+            "date_start": "2028-07-24",
+            "date_end": "2028-07-26",
+            "eventwebsite": "https://www.gbta.org/",
+            "created": "2025-09-11 19:58:04",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "suzanne@evolveconevents.com",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "EvolveCon",
+            "account_type": "MANG",
+            "owners": "Joseph El Daher",
+            "owners_email": "joseph_eldaher@hotelmap.com",
+            "contact_name": "",
+            "contact_email": "suzanne@evolveconevents.com",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "RECIPIENT",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": null,
+            "tab_bnbs": null,
+            "tab_cheap": null,
+            "tab_cheap_features": null,
+            "tab_contracted": null,
+            "tab_contracted_features": null,
+            "tab_deals": null,
+            "tab_deals_features": null,
+            "tab_editors": null,
+            "tab_hubs": null,
+            "tab_hubs_features": null,
+            "tab_luxury": null,
+            "tab_luxury_features": null,
+            "tab_luxury_grid": null,
+            "tab_member": null,
+            "tab_nearby": null,
+            "tab_nearby_features": null,
+            "tab_nearby_grid": null,
+            "tab_neighbourhoods": null,
+            "tab_new": null,
+            "tab_new_features": null,
+            "tab_new_grid": null,
+            "tab_private": null,
+            "tab_private_features": null,
+            "tab_promos": null,
+            "tab_promos_features": null,
+            "tab_special": null,
+            "tab_sustainable": null,
+            "tab_sustainable_features": null,
+            "tab_trip": null,
+            "tab_trip_features": null
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212384,
+        "event": {
+            "map_key": "M45BX",
+            "affiliate_id": "Q288OQDVT4",
+            "title": "TBA",
+            "sub_title": "Paris Expo Porte de Versailles",
+            "venue_id": 35404,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Paris",
+            "country": "France",
+            "country_code": "FR",
+            "latitude": 48.832769,
+            "longitude": 2.286309,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 4,
+            "event_attendees": 0,
+            "date_start": "2028-10-28",
+            "date_end": "2028-11-01",
+            "eventwebsite": null,
+            "created": "2025-09-03 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "BCD Demo",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "TRAN",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 1,
+            "tab_hubs_features": 0,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 0,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 1,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 1,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212297,
+        "event": {
+            "map_key": "MLNVU",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "GBTA VDR Europe Conference",
+            "sub_title": "Halle 550",
+            "venue_id": 481915,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Z\u00fcrich",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.4117158,
+            "longitude": 8.5399435,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 4,
+            "event_attendees": 0,
+            "date_start": "2028-11-06",
+            "date_end": "2028-11-10",
+            "eventwebsite": null,
+            "created": "2025-08-25 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212237,
+        "event": {
+            "map_key": "MJYR6",
+            "affiliate_id": "6DN34PCOFJ",
+            "title": "International Conference on Isotopes",
+            "sub_title": "Culture and Congress Centre Trafo Baden",
+            "venue_id": 479792,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Baden",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.478672,
+            "longitude": 8.305396,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 28,
+            "event_attendees": 0,
+            "date_start": "2028-02-01",
+            "date_end": "2028-02-29",
+            "eventwebsite": null,
+            "created": "2025-08-20 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "KUONI Tumlare Demo",
+            "account_type": "SAAS",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "MERC",
+                "saas_billable": "N",
+                "saas_modify": "Y",
+                "saas_notes": "Fixed fee EUR 15,000"
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212236,
+        "event": {
+            "map_key": "MSL6M",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "International Conference on Isotopes",
+            "sub_title": "Kongresshaus Zurich",
+            "venue_id": 18301,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Z\u00fcrich",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.366559261107,
+            "longitude": 8.536162430046,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 28,
+            "event_attendees": 0,
+            "date_start": "2028-02-01",
+            "date_end": "2028-02-29",
+            "eventwebsite": null,
+            "created": "2025-08-20 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 212039,
+        "event": {
+            "map_key": "MD5JQ",
+            "affiliate_id": "E3NOC5LJEZ",
+            "title": "EADV Congress",
+            "sub_title": "Paris Expo Porte de Versailles",
+            "venue_id": 35404,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Paris",
+            "country": "France",
+            "country_code": "FR",
+            "latitude": 48.832769,
+            "longitude": 2.286309,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 3,
+            "event_attendees": 0,
+            "date_start": "2028-09-13",
+            "date_end": "2028-09-16",
+            "eventwebsite": "",
+            "created": "2025-08-11 14:17:38",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "c.vollmer@interplan.de",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "Interplan New Business",
+            "account_type": "SAAS",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "c.vollmer@interplan.de",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "RECIPIENT",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 0,
+            "tab_hubs": 1,
+            "tab_hubs_features": 0,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 0,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 1,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 1,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 1,
+            "tab_sustainable_features": 1,
+            "tab_trip": 0,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 211785,
+        "event": {
+            "map_key": "MYYXD",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "World Cup of Hockey 2028 (Eishockey)",
+            "sub_title": "D\u00fcsseldorf Hautpbahnhof",
+            "venue_id": 483012,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "D\u00fcsseldorf",
+            "country": "Germany",
+            "country_code": "DE",
+            "latitude": 51.220319,
+            "longitude": 6.792765,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 12,
+            "event_attendees": 0,
+            "date_start": "2028-02-05",
+            "date_end": "2028-02-17",
+            "eventwebsite": null,
+            "created": "2025-07-21 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 211784,
+        "event": {
+            "map_key": "M3CGH",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "World Cup of Hockey 2028",
+            "sub_title": "D\u00fcsseldorf Hautpbahnhof",
+            "venue_id": 483012,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "D\u00fcsseldorf",
+            "country": "Germany",
+            "country_code": "DE",
+            "latitude": 51.220319,
+            "longitude": 6.792765,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 12,
+            "event_attendees": 0,
+            "date_start": "2028-02-05",
+            "date_end": "2028-02-17",
+            "eventwebsite": null,
+            "created": "2025-07-21 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 211778,
+        "event": {
+            "map_key": "M43UJ",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "World Cup of Hockey 2028",
+            "sub_title": "a&o D\u00fcsseldorf Hauptbahnhof",
+            "venue_id": "25492330",
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "YES",
+            "city": "D\u00fcsseldorf",
+            "country": "Germany",
+            "country_code": "DE",
+            "latitude": 51.216248,
+            "longitude": 6.782342,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 12,
+            "event_attendees": 0,
+            "date_start": "2028-02-05",
+            "date_end": "2028-02-17",
+            "eventwebsite": null,
+            "created": "2025-07-18 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 211763,
+        "event": {
+            "map_key": "MLIUW",
+            "affiliate_id": "Q288OQDVT4",
+            "title": "World Cup of Hockey 2028",
+            "sub_title": "D\u00fcsseldorf Hautpbahnhof",
+            "venue_id": 483012,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "D\u00fcsseldorf",
+            "country": "Germany",
+            "country_code": "DE",
+            "latitude": 51.220319,
+            "longitude": 6.792765,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 12,
+            "event_attendees": 0,
+            "date_start": "2028-02-05",
+            "date_end": "2028-02-17",
+            "eventwebsite": null,
+            "created": "2025-07-17 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "BCD Demo",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "TRAN",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 210867,
+        "event": {
+            "map_key": "M2R5M",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "Homeless World Cup 2028",
+            "sub_title": "Landiwiese",
+            "venue_id": 482839,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Z\u00fcrich",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.35,
+            "longitude": 8.53432,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 2,
+            "event_attendees": 0,
+            "date_start": "2028-09-05",
+            "date_end": "2028-09-07",
+            "eventwebsite": null,
+            "created": "2025-05-19 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 208133,
+        "event": {
+            "map_key": "MZVVZ",
+            "affiliate_id": "G8XXD0E5UD",
+            "title": "2028 IADR/AADOCR/CADR General Session and Exhibition",
+            "sub_title": "The Baltimore Convention Center",
+            "venue_id": 0,
+            "has_venue_id": "NO",
+            "is_venue_id_hotel": "NO",
+            "city": "Baltimore",
+            "country": "United States",
+            "country_code": "US",
+            "latitude": 39.285444,
+            "longitude": -76.616736,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 3,
+            "event_attendees": 0,
+            "date_start": "2028-03-15",
+            "date_end": "2028-03-18",
+            "eventwebsite": "https://www.iadr.org/",
+            "created": "2024-11-17 23:13:11",
+            "event_owner": "Tracy Makhlouf",
+            "event_owner_email": "tracy_makhlouf@hotelmap.com",
+            "event_recipient_field": "suzanne@evolveconevents.com",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "EvolveCon",
+            "account_type": "MANG",
+            "owners": "Joseph El Daher",
+            "owners_email": "joseph_eldaher@hotelmap.com",
+            "contact_name": "",
+            "contact_email": "suzanne@evolveconevents.com",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "RECIPIENT",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 207576,
+        "event": {
+            "map_key": "M165C",
+            "affiliate_id": "6DN34PCOFJ",
+            "title": "Homeless World Cup",
+            "sub_title": "Europaallee",
+            "venue_id": 482637,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Z\u00fcrich",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.37881,
+            "longitude": 8.5326,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 9,
+            "event_attendees": 750,
+            "date_start": "2028-05-15",
+            "date_end": "2028-05-24",
+            "eventwebsite": null,
+            "created": "2024-10-08 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": null,
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "KUONI Tumlare Demo",
+            "account_type": "SAAS",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "MERC",
+                "saas_billable": "N",
+                "saas_modify": "Y",
+                "saas_notes": "Fixed fee EUR 15,000"
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 1,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 1,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 1,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 207078,
+        "event": {
+            "map_key": "MD3YM",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "Messe D\u00fcsseldorf",
+            "sub_title": "Messe D\u00fcsseldorf",
+            "venue_id": 480940,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "D\u00fcsseldorf",
+            "country": "Germany",
+            "country_code": "DE",
+            "latitude": 51.2618224,
+            "longitude": 6.7375483,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 365,
+            "event_attendees": 0,
+            "date_start": "2028-01-01",
+            "date_end": "2028-12-31",
+            "eventwebsite": null,
+            "created": "2024-09-06 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 204619,
+        "event": {
+            "map_key": "MKLL8",
+            "affiliate_id": "JSUZVI06UP",
+            "title": "Contract 2028",
+            "sub_title": "Excel London",
+            "venue_id": 20021,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "London",
+            "country": "United Kingdom",
+            "country_code": "GB",
+            "latitude": 51.50846,
+            "longitude": 0.029846,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 2,
+            "event_attendees": 0,
+            "date_start": "2028-02-08",
+            "date_end": "2028-02-10",
+            "eventwebsite": "",
+            "created": "2024-06-03 17:47:18",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "MiCodmc",
+            "account_type": "SAAS",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "MERC",
+                "saas_billable": "Y",
+                "saas_modify": "Y",
+                "saas_notes": "Starting from 30th November 2023, Partner agreed to pay for a minimum of Zero Transaction Fees in years one and two, and 100,000 minimum Transaction Fees per annum in subsequent years\r\n\r\nThis has now been replaced by an amended addendum which holds MiCo to no Minimum"
+            }
+        },
+        "tabs": {
+            "tab_all": null,
+            "tab_bnbs": null,
+            "tab_cheap": null,
+            "tab_cheap_features": null,
+            "tab_contracted": null,
+            "tab_contracted_features": null,
+            "tab_deals": null,
+            "tab_deals_features": null,
+            "tab_editors": null,
+            "tab_hubs": null,
+            "tab_hubs_features": null,
+            "tab_luxury": null,
+            "tab_luxury_features": null,
+            "tab_luxury_grid": null,
+            "tab_member": null,
+            "tab_nearby": null,
+            "tab_nearby_features": null,
+            "tab_nearby_grid": null,
+            "tab_neighbourhoods": null,
+            "tab_new": null,
+            "tab_new_features": null,
+            "tab_new_grid": null,
+            "tab_private": null,
+            "tab_private_features": null,
+            "tab_promos": null,
+            "tab_promos_features": null,
+            "tab_special": null,
+            "tab_sustainable": null,
+            "tab_sustainable_features": null,
+            "tab_trip": null,
+            "tab_trip_features": null
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "YES",
+            "block_hotels_loaded": 1,
+            "block_rooms_available_peak_at_start": "50",
+            "block_rooms_available_peak_at_current": "25",
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 203154,
+        "event": {
+            "map_key": "M73V0",
+            "affiliate_id": "KI3R9P8VB0",
+            "title": "Gem Faire Tulsa, OK 2028",
+            "sub_title": "Expo Square",
+            "venue_id": null,
+            "has_venue_id": "NO",
+            "is_venue_id_hotel": "NO",
+            "city": "Tulsa",
+            "country": "United States",
+            "country_code": "US",
+            "latitude": 36.1363686,
+            "longitude": -95.9302389,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 2,
+            "event_attendees": 12356,
+            "date_start": "2028-11-03",
+            "date_end": "2028-11-05",
+            "eventwebsite": null,
+            "created": "2024-02-16 00:00:00",
+            "event_owner": "Steve Potter",
+            "event_owner_email": "steven_potter@hotelmap.com",
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "CHEESEFACTORY",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "DATABASE",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 202866,
+        "event": {
+            "map_key": "M958A",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "ICIS 2028",
+            "sub_title": "The Circle Convention Center Zurich Airport",
+            "venue_id": 481638,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Kloten",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.4507496,
+            "longitude": 8.5651358,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 5,
+            "event_attendees": 0,
+            "date_start": "2028-12-08",
+            "date_end": "2028-12-13",
+            "eventwebsite": null,
+            "created": "2024-01-23 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    },
+    {
+        "id": 202836,
+        "event": {
+            "map_key": "MJWAJ",
+            "affiliate_id": "SNL20PNOUY",
+            "title": "ICIS 2028",
+            "sub_title": "Kongresshaus Zurich",
+            "venue_id": 18301,
+            "has_venue_id": "YES",
+            "is_venue_id_hotel": "NO",
+            "city": "Z\u00fcrich",
+            "country": "Switzerland",
+            "country_code": "CH",
+            "latitude": 47.366559261107,
+            "longitude": 8.536162430046,
+            "embed_count": 0,
+            "status": "future",
+            "event_period_in_days": 5,
+            "event_attendees": 0,
+            "date_start": "2028-12-08",
+            "date_end": "2028-12-13",
+            "eventwebsite": null,
+            "created": "2024-01-22 00:00:00",
+            "event_owner": null,
+            "event_owner_email": null,
+            "event_recipient_field": "",
+            "pro_url": null,
+            "pro_overview": "NOT_CREATED",
+            "private_rates_id": "NOT_CREATED"
+        },
+        "company": {
+            "company_name": "James Trading ",
+            "account_type": "MANG",
+            "owners": null,
+            "owners_email": null,
+            "contact_name": "",
+            "contact_email": "",
+            "contact_firstname": "",
+            "contact_lastname": "",
+            "contact_type": "NOT_AVAILABLE",
+            "saas_data": {
+                "saas_model": "",
+                "saas_billable": "N",
+                "saas_modify": "N",
+                "saas_notes": ""
+            }
+        },
+        "tabs": {
+            "tab_all": 0,
+            "tab_bnbs": 0,
+            "tab_cheap": 0,
+            "tab_cheap_features": 0,
+            "tab_contracted": 0,
+            "tab_contracted_features": 0,
+            "tab_deals": 0,
+            "tab_deals_features": 0,
+            "tab_editors": 1,
+            "tab_hubs": 0,
+            "tab_hubs_features": 1,
+            "tab_luxury": 0,
+            "tab_luxury_features": 0,
+            "tab_luxury_grid": 0,
+            "tab_member": 0,
+            "tab_nearby": 1,
+            "tab_nearby_features": 1,
+            "tab_nearby_grid": 0,
+            "tab_neighbourhoods": 0,
+            "tab_new": 0,
+            "tab_new_features": 0,
+            "tab_new_grid": 0,
+            "tab_private": 0,
+            "tab_private_features": 0,
+            "tab_promos": 0,
+            "tab_promos_features": 0,
+            "tab_special": 0,
+            "tab_sustainable": 0,
+            "tab_sustainable_features": 0,
+            "tab_trip": 1,
+            "tab_trip_features": 0
+        },
+        "hotel_exception": [],
+        "storage_type": "MEMORY",
+        "visits": {
+            "totalviews": 0,
+            "localviews": 0,
+            "privateviews": 0,
+            "keyviews": 0,
+            "breakdown": null
+        },
+        "registrations": {
+            "post_reg": 0,
+            "registrants": 0
+        },
+        "blocks": {
+            "blocks_loaded": "NO",
+            "block_hotels_loaded": 0,
+            "block_rooms_available_peak_at_start": 0,
+            "block_rooms_available_peak_at_current": 0,
+            "duplos_integrated": "NO"
+        },
+        "hubspot": {
+            "gbp": {
+                "gross_gbp": 0,
+                "gross_cancel_gbp": 0,
+                "net_gbp": 0,
+                "net_cancel_gbp": 0,
+                "commission_gbp": 0,
+                "commission_partner_share_gbp": 0,
+                "commission_contracted_expected_gbp": 0,
+                "commission_hotelmap_expected_gbp": 0,
+                "commission_net_gbp": 0,
+                "gbp_average_nightly_rate": 0
+            },
+            "local": {
+                "currency": "???",
+                "gross": 0,
+                "gross_cancel": 0,
+                "net": 0,
+                "net_cancel": 0
+            }
+        },
+        "bookings": {
+            "unique_hotels_booked": 0,
+            "rooms": {
+                "all_rooms": 0,
+                "all_rooms_minus_cancelled": 0,
+                "all_rooms_cancelled": 0,
+                "live_rooms": -1,
+                "contract_rooms": -1,
+                "partner_collect_rooms": -1
+            },
+            "roomnights": {
+                "all_room_nights": 0,
+                "all_room_nights_minus_cancelled": 0,
+                "all_rooms_nights_cancelled": 0,
+                "live_room_nights": -1,
+                "contract_room_nights": -1,
+                "partner_collect_room_nights": -1
+            },
+            "revenue": {
+                "total_gbp": 0,
+                "net_revenue_gbp": 0,
+                "cancel_gbp": 0,
+                "total_minus_cancel_gbp": 0,
+                "contract_gbp": -1,
+                "live_gbp": -1
+            },
+            "managed": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "hotelmap_rates_expected": 0,
+                "hotelmap_rates_received": 0,
+                "contracted_expected": 0,
+                "contracted_received": 0,
+                "partner_collect_expected": 0
+            },
+            "saas": {
+                "expected": 0,
+                "received": 0,
+                "pending": 0,
+                "license_fees": 0
+            }
+        },
+        "negotiated_rates": []
+    }
+]
