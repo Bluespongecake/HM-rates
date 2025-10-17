@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple, Set
 
 import pandas as pd
 import pydeck as pdk
@@ -23,6 +23,16 @@ DEFAULT_MIN_SAVINGS = 100.0
 DEFAULT_MAX_TOTAL = 500.0
 DEFAULT_RADIUS_FILTER_KM = None
 MAP_CENTER = (20.0, 0.0)
+
+
+def _normalize_country(value: Any) -> str:
+    if value is None:
+        return "Unknown"
+    if isinstance(value, str):
+        cleaned = value.strip()
+        return cleaned if cleaned else "Unknown"
+    cleaned = str(value).strip()
+    return cleaned if cleaned else "Unknown"
 
 
 def _load_cached_events(path: Path) -> List[Dict[str, Any]]:
@@ -135,7 +145,7 @@ def _build_event_rows(
             {
                 "title": event.get("title"),
                 "city": event.get("city"),
-                "country": event.get("country"),
+                "country": _normalize_country(event.get("country")),
                 "map_key": event.get("map_key"),
                 "venue_id": event.get("venue_id"),
                 "latitude": float(latitude),
@@ -252,8 +262,27 @@ def main() -> None:
     )
     radius_filter_km = None if radius_filter == 0 else float(radius_filter)
 
+    available_countries: Set[str] = {_normalize_country(event.get("country")) for event in events}
+    country_options = sorted(available_countries) or ["Unknown"]
+    selected_countries = st.sidebar.multiselect(
+        "Countries",
+        options=country_options,
+        default=country_options,
+        help="Filter events by country. Leave all selected to include every country.",
+    )
+    if not selected_countries:
+        st.info("Select at least one country to display events.")
+        return
+
+    filtered_events = [
+        event for event in events if _normalize_country(event.get("country")) in set(selected_countries)
+    ]
+    if not filtered_events:
+        st.info("No events match the selected countries.")
+        return
+
     rows = _build_event_rows(
-        events,
+        filtered_events,
         discount_threshold_pct=min_discount,
         savings_threshold=min_savings,
         max_total_cost=max_total,
