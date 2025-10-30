@@ -23,6 +23,7 @@ DEFAULT_MIN_SAVINGS = 100.0
 DEFAULT_MAX_TOTAL = 1000.0
 DEFAULT_RADIUS_FILTER_KM = None
 MAP_CENTER = (20.0, 0.0)
+ALL_COUNTRIES_OPTION = "All countries"
 
 
 def _normalize_country(value: Any) -> str:
@@ -61,6 +62,15 @@ def _parse_date(value: Any) -> Optional[datetime]:
             except ValueError:
                 continue
     return None
+
+
+def _event_length_days(checkin: Optional[datetime], checkout: Optional[datetime]) -> Optional[int]:
+    if checkin is None or checkout is None:
+        return None
+    delta = (checkout.date() - checkin.date()).days
+    if delta < 1:
+        return 1
+    return delta
 
 
 def _evaluate_event(
@@ -140,6 +150,7 @@ def _build_event_rows(
 
         start_date = _parse_date(event.get("checkin"))
         end_date = _parse_date(event.get("checkout"))
+        duration_days = _event_length_days(start_date, end_date)
 
         rows.append(
             {
@@ -152,6 +163,7 @@ def _build_event_rows(
                 "longitude": float(longitude),
                 "checkin": start_date.strftime("%Y-%m-%d") if start_date else None,
                 "checkout": end_date.strftime("%Y-%m-%d") if end_date else None,
+                "duration_days": duration_days,
                 "is_good_deal": evaluation["is_good_deal"],
                 "reason": evaluation["reason"],
                 "best_property": evaluation.get("best_property"),
@@ -235,15 +247,30 @@ def render() -> None:
 
     available_countries: Set[str] = {_normalize_country(event.get("country")) for event in events}
     country_options = sorted(available_countries) or ["Unknown"]
+    country_selector_options: List[str] = [ALL_COUNTRIES_OPTION, *country_options]
     selected_countries = st.sidebar.multiselect(
         "Countries",
-        options=country_options,
-        default=country_options,
-        help="Filter events by country. Leave all selected to include every country.",
+        options=country_selector_options,
+        default=[ALL_COUNTRIES_OPTION],
+        help="Keep 'All countries' selected to include everything, or remove it to pick specific countries.",
+        placeholder="Select countries…",
     )
+
+    if not selected_countries or ALL_COUNTRIES_OPTION in selected_countries:
+        selected_countries = country_options
+
     if not selected_countries:
         st.info("Select at least one country to display events.")
         st.stop()
+
+    st.sidebar.header("Event Duration")
+    min_duration, max_duration = st.sidebar.slider(
+        "Length of event (days)",
+        min_value=1,
+        max_value=30,
+        value=(1, 7),
+        step=1,
+    )
 
     st.sidebar.header("Deal Criteria")
     min_discount = st.sidebar.slider(
@@ -290,6 +317,15 @@ def render() -> None:
         max_total_cost=max_total,
         radius_filter_km=radius_filter_km,
     )
+
+    duration_filtered_rows = [
+        row
+        for row in rows
+        if row.get("duration_days") is None
+        or (row["duration_days"] >= min_duration and row["duration_days"] <= max_duration)
+    ]
+
+    rows = duration_filtered_rows
 
     if not rows:
         st.info("No events match the filters or have cached hotels.")

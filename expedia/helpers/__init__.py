@@ -1,5 +1,7 @@
 from datetime import date, datetime, timedelta
-from typing import Any, Dict, Iterable, List, Mapping, Optional, Tuple, Union
+import math
+import re
+from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple, Union
 
 import pandas as pd
 
@@ -12,7 +14,13 @@ from ..geo_helpers import (
 )
 
 
-def build_rates_dataframe(jsons, labels, occupancy_key: str = "2"):
+def build_rates_dataframe(
+    jsons,
+    labels,
+    occupancy_key: str = "2",
+    *,
+    total_fields: Optional[Iterable[str]] = None,
+):
     """
     Parameters
     ----------
@@ -22,40 +30,103 @@ def build_rates_dataframe(jsons, labels, occupancy_key: str = "2"):
         Names to assign to each JSON's prices column. Must match length of jsons.
     occupancy_key : str
         Occupancy key to read from the availability payload (defaults to "2").
+    total_fields : iterable of str, optional
+        Which totals fields to extract from each rate payload. Defaults to ("inclusive",).
         
     Returns
     -------
     pd.DataFrame
-        DataFrame with 'room_name' from the first JSON and one column per label
-        showing the cheapest 'inclusive' total price (request_currency.value) for that room.
+        DataFrame with 'room_name' from the first JSON and one column per label/total field
+        showing values derived from the cheapest rate for that room.
     """
     if len(jsons) != len(labels):
         raise ValueError("`jsons` and `labels` must have the same length.")
-    
-    def _extract_price_from_rate(rate):
-        """Safely pull the inclusive request-currency value (as float) for the chosen occupancy from a rate."""
-        try:
-            return float(
-                rate["occupancy_pricing"][occupancy_key]["totals"]["inclusive"]["request_currency"]["value"]
-            )
-        except (KeyError, TypeError, ValueError):
+
+    totals_to_extract: Sequence[str]
+    if total_fields is None:
+        totals_to_extract = ("inclusive",)
+    else:
+        totals_to_extract = tuple(total_fields)
+        if not totals_to_extract:
+            raise ValueError("`total_fields` must include at least one key.")
+
+    ranking_key = "inclusive" if "inclusive" in totals_to_extract else totals_to_extract[0]
+
+    def _coerce_float(value: Any) -> Optional[float]:
+        if value is None:
             return None
+        if isinstance(value, bool):
+            return float(int(value))
+        if isinstance(value, (int, float)):
+            if isinstance(value, float) and not math.isfinite(value):
+                return None
+            return float(value)
+        if isinstance(value, str):
+            try:
+                return float(value.replace(",", ""))
+            except ValueError:
+                return None
+        return None
+
+    def _extract_totals_from_rate(rate: Mapping[str, Any]) -> Dict[str, float]:
+        totals: Dict[str, float] = {}
+        occupancy_data = (
+            ((rate or {}).get("occupancy_pricing") or {})
+            .get(occupancy_key, {})
+        )
+        totals_node = occupancy_data.get("totals")
+        if not isinstance(totals_node, Mapping):
+            return totals
+
+        for field in totals_to_extract:
+            field_node = totals_node.get(field)
+            value: Optional[float] = None
+            if isinstance(field_node, Mapping):
+                request_currency = field_node.get("request_currency")
+                if isinstance(request_currency, Mapping):
+                    value = _coerce_float(request_currency.get("value"))
+                if value is None:
+                    value = _coerce_float(field_node.get("value"))
+            else:
+                value = _coerce_float(field_node)
+
+            if value is not None:
+                totals[field] = value
+        return totals
+
+    def _select_totals_for_room(room: Mapping[str, Any]) -> Dict[str, float]:
+        best_totals: Optional[Dict[str, float]] = None
+        best_rank_value: Optional[float] = None
+
+        rates = room.get("rates", []) or []
+        for rate in rates:
+            totals = _extract_totals_from_rate(rate)
+            if not totals:
+                continue
+
+            rank_value = totals.get(ranking_key)
+            if rank_value is None:
+                # Keep candidate so we have fallback data if all rates miss the ranking key.
+                if best_totals is None:
+                    best_totals = totals
+                continue
+
+            if best_rank_value is None or rank_value < best_rank_value:
+                best_rank_value = rank_value
+                best_totals = totals
+
+        return best_totals or {}
 
     # --- Helper to extract {room_name: cheapest_price} mapping ---
     def extract_room_prices(data):
-        mapping = {}
+        mapping: Dict[str, Dict[str, float]] = {}
         for room in data.get("rooms", []):
             room_name = room.get("room_name")
             if not room_name:
                 continue
 
-            prices = []
-            for rate in room.get("rates", []) or []:
-                price = _extract_price_from_rate(rate)
-                if price is not None:
-                    prices.append(price)
-
-            mapping[room_name] = min(prices) if prices else None
+            totals = _select_totals_for_room(room)
+            mapping[room_name] = totals
         return mapping
     
     # --- Build initial DataFrame from first JSON ---
@@ -66,7 +137,11 @@ def build_rates_dataframe(jsons, labels, occupancy_key: str = "2"):
     # Add columns for each JSON/label
     for data, label in zip(jsons, labels):
         price_map = extract_room_prices(data)
-        df[label] = df["room_name"].map(price_map)
+        for field in totals_to_extract:
+            column_name = label
+            if not (len(totals_to_extract) == 1 and field == "inclusive"):
+                column_name = f"{label}_{field}"
+            df[column_name] = df["room_name"].map(lambda name: price_map.get(name, {}).get(field))
     
     return df
 
@@ -138,6 +213,76 @@ def property_display_name(summary: Dict[str, Any], fallback: str = "") -> str:
     if isinstance(property_name, str):
         return property_name
     return fallback
+
+
+def property_category_label(summary: Mapping[str, Any]) -> Optional[str]:
+    """
+    Extract a human-readable property category name from a summary payload.
+    """
+    category = summary.get("category")
+    if isinstance(category, Mapping):
+        name = category.get("name")
+        if isinstance(name, str) and name.strip():
+            return name.strip()
+        ident = category.get("id")
+        if isinstance(ident, (str, int, float)):
+            ident_str = str(ident).strip()
+            if ident_str:
+                return ident_str
+    elif isinstance(category, str) and category.strip():
+        return category.strip()
+    return None
+
+
+def _parse_int_like(value: Any) -> Optional[int]:
+    """
+    Try to coerce a value that looks numeric into an integer.
+    """
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return int(value)
+    if isinstance(value, (int, float)):
+        if isinstance(value, float) and not math.isfinite(value):
+            return None
+        return int(round(float(value)))
+    if isinstance(value, str):
+        match = re.search(r"\d+", value.replace(",", ""))
+        if match:
+            try:
+                return int(match.group())
+            except ValueError:
+                return None
+    return None
+
+
+def property_total_room_count(summary: Mapping[str, Any]) -> Optional[int]:
+    """
+    Extract the total number of rooms for a property from the statistics payload.
+    """
+    stats = summary.get("statistics")
+    if isinstance(stats, Mapping):
+        items = stats.values()
+    elif isinstance(stats, list):
+        items = stats
+    else:
+        items = []
+
+    for entry in items:
+        if not isinstance(entry, Mapping):
+            continue
+        name = entry.get("name")
+        value = entry.get("value")
+        identifier = entry.get("id")
+        parsed_value = _parse_int_like(value)
+        if parsed_value is None:
+            parsed_value = _parse_int_like(name)
+        if parsed_value is None:
+            continue
+        name_text = name.lower() if isinstance(name, str) else ""
+        if identifier == "52" or "total number of rooms" in name_text:
+            return parsed_value
+    return None
 
 
 
@@ -295,7 +440,7 @@ def fetch_rates_near_coordinate(
         def fetch_summaries(batch: List[str]) -> Mapping[Any, Any]:
             return client.fetch_property_summaries(
                 batch,
-                includes=("name", "location"),
+                includes=("name", "location", "statistics", "category"),
             )
 
         for rt in rate_types:
@@ -344,10 +489,13 @@ def fetch_rates_near_coordinate(
         summary = summaries.get(pid, {})
         name = property_display_name(summary, fallback=pid)
         lat_lon = property_coordinates(summary)
+        total_rooms = property_total_room_count(summary)
         row.update(
             {
                 "Property": name,
                 "Property ID": pid,
+                "Total rooms": total_rooms,
+                "type": property_category_label(summary),
                 "latitude": lat_lon[0],
                 "longitude": lat_lon[1],
             }
@@ -387,7 +535,16 @@ def fetch_rates_near_coordinate(
 
         rows.append(row)
 
-    base_columns = ["Property", "Property ID", "Room", "Price (request currency)", "latitude", "longitude"]
+    base_columns = [
+        "Property",
+        "Property ID",
+        "Total rooms",
+        "type",
+        "Room",
+        "Price (request currency)",
+        "latitude",
+        "longitude",
+    ]
 
     if rows:
         df = pd.DataFrame(rows)

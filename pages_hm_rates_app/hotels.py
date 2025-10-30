@@ -104,8 +104,11 @@ def render() -> None:
     st.session_state.setdefault("search_error", None)
     st.session_state.setdefault("deal_min_discount_pct", 10.0)
     st.session_state.setdefault("deal_min_savings", 100.0)
-    st.session_state.setdefault("deal_max_total_cost", 1000.0)
+    st.session_state.setdefault("deal_max_total_cost", 2000.0)
     st.session_state.setdefault("selected_event_details", None)
+    st.session_state.setdefault("map_filter_min_discount_pct", 5.0)
+    st.session_state.setdefault("map_filter_max_total_cost", 0.0)
+    st.session_state.setdefault("filter_hotels_only", False)
 
     events_catalog = get_events_catalog()
 
@@ -163,13 +166,18 @@ def render() -> None:
                         else:
                             start_date = start_ts.date()
                             end_date = end_ts.date() if pd.notna(end_ts) else start_date
-                            if end_date <= start_date:
-                                end_date = start_date + timedelta(days=1)
+                            if end_date < start_date:
+                                end_date = start_date
+
+                            checkin_date = start_date - timedelta(days=1)
+                            checkout_date = end_date
+                            if checkout_date <= checkin_date:
+                                checkout_date = checkin_date + timedelta(days=1)
 
                             st.session_state["latitude"] = float(lat)
                             st.session_state["longitude"] = float(lon)
-                            st.session_state["checkin"] = start_date
-                            st.session_state["checkout"] = end_date
+                            st.session_state["checkin"] = checkin_date
+                            st.session_state["checkout"] = checkout_date
                             st.session_state["selected_event_details"] = {
                                 "title": selected_event.get("title"),
                                 "map_key": selected_event.get("map_key"),
@@ -178,8 +186,8 @@ def render() -> None:
                                 "country": selected_event.get("country"),
                                 "latitude": float(lat),
                                 "longitude": float(lon),
-                                "checkin": start_date.isoformat(),
-                                "checkout": end_date.isoformat(),
+                                "checkin": checkin_date.isoformat(),
+                                "checkout": checkout_date.isoformat(),
                             }
                             st.success(f"Loaded event '{selected_event['title']}'.")
                             st.rerun()
@@ -346,6 +354,15 @@ def render() -> None:
         rate_labels = result.get("rate_type_labels", {})
         rate_types_used = result.get("rate_types", [])
 
+    hotels_only = bool(st.session_state.get("filter_hotels_only"))
+    if hotels_only and not df.empty:
+        if "type" in df.columns:
+            filtered = df["type"].astype(str).str.lower() == "hotel"
+            df = df.loc[filtered].reset_index(drop=True)
+        else:
+            st.warning("Property type information is unavailable; displaying all properties.")
+            hotels_only = False
+
     deal_assessment = None
     if not df.empty:
         deal_assessment = evaluate_deal_quality(
@@ -414,6 +431,25 @@ def render() -> None:
         #     st.info("Showing cached rates from the saved database (no API call).")
 
     st.subheader("Map")
+
+    discount_col = "Discount (%)"
+    primary_price_col = None
+    if rate_types_used:
+        primary_label = rate_labels.get(rate_types_used[0], rate_types_used[0])
+        candidate_col = f"Price ({primary_label})"
+        if candidate_col in df.columns:
+            primary_price_col = candidate_col
+    if primary_price_col is None and "Price (request currency)" in df.columns:
+        primary_price_col = "Price (request currency)"
+
+    map_min_discount_filter = float(st.session_state.get("map_filter_min_discount_pct", 0.0) or 0.0)
+    raw_map_max_total_cost = st.session_state.get("map_filter_max_total_cost", 0.0)
+    try:
+        map_max_total_cost_value = float(raw_map_max_total_cost)
+    except (TypeError, ValueError):
+        map_max_total_cost_value = 0.0
+    map_max_total_cost_filter = map_max_total_cost_value if map_max_total_cost_value > 0 else None
+
     selected_point = pd.DataFrame(
         [
             {
@@ -425,28 +461,84 @@ def render() -> None:
         ]
     )
 
+    map_points = selected_point
     if result:
         hotel_columns = ["latitude", "longitude"]
         if "Property" in df.columns:
             hotel_columns.append("Property")
+        if discount_col in df.columns:
+            hotel_columns.append(discount_col)
+        if primary_price_col and primary_price_col in df.columns:
+            hotel_columns.append(primary_price_col)
+
         hotels_geo = df.dropna(subset=["latitude", "longitude"])[hotel_columns].copy()
         if not hotels_geo.empty:
             hotels_geo["category"] = "Hotel"
-            if "Property" in hotels_geo.columns:
-                hotels_geo["tooltip"] = hotels_geo["Property"].fillna("").astype(str)
-                missing_tooltips = hotels_geo["tooltip"].str.strip() == ""
-                hotels_geo.loc[missing_tooltips, "tooltip"] = (
-                    hotels_geo.loc[missing_tooltips, "latitude"].astype(str)
-                    + ", "
-                    + hotels_geo.loc[missing_tooltips, "longitude"].astype(str)
-                )
-            else:
-                hotels_geo["tooltip"] = hotels_geo["latitude"].astype(str) + ", " + hotels_geo["longitude"].astype(str)
-            map_points = pd.concat([selected_point, hotels_geo], ignore_index=True)
-        else:
-            map_points = selected_point
-    else:
-        map_points = selected_point
+            if discount_col in hotels_geo.columns:
+                hotels_geo[discount_col] = pd.to_numeric(hotels_geo[discount_col], errors="coerce")
+            if primary_price_col and primary_price_col in hotels_geo.columns:
+                hotels_geo[primary_price_col] = pd.to_numeric(hotels_geo[primary_price_col], errors="coerce")
+
+            if discount_col in hotels_geo.columns and map_min_discount_filter > 0:
+                hotels_geo = hotels_geo[hotels_geo[discount_col] >= map_min_discount_filter]
+            if (
+                primary_price_col
+                and primary_price_col in hotels_geo.columns
+                and map_max_total_cost_filter is not None
+            ):
+                hotels_geo = hotels_geo[hotels_geo[primary_price_col] <= map_max_total_cost_filter]
+
+            if not hotels_geo.empty:
+                def _format_tooltip(row):
+                    parts = []
+                    property_name = str(row.get("Property", "") or "").strip()
+                    if property_name:
+                        parts.append(property_name)
+                    discount_value = row.get(discount_col)
+                    if discount_value is not None and not pd.isna(discount_value):
+                        parts.append(f"Discount: {discount_value:.1f}%")
+                    if primary_price_col and primary_price_col in row and not pd.isna(row.get(primary_price_col)):
+                        parts.append(f"Total: ${row[primary_price_col]:,.0f}")
+                    if not parts:
+                        parts.append(f"{row['latitude']}, {row['longitude']}")
+                    return " • ".join(parts)
+
+                hotels_geo["tooltip"] = hotels_geo.apply(_format_tooltip, axis=1)
+
+                def _color_for_discount(value):
+                    color_stops = [
+                        (0.0, (220, 20, 60)),
+                        (5.0, (255, 140, 0)),
+                        (20.0, (34, 139, 34)),
+                    ]
+                    if value is None or pd.isna(value):
+                        return (128, 128, 128)
+                    if value <= color_stops[0][0]:
+                        return color_stops[0][1]
+                    for idx in range(1, len(color_stops)):
+                        upper_threshold, upper_color = color_stops[idx]
+                        lower_threshold, lower_color = color_stops[idx - 1]
+                        if value <= upper_threshold:
+                            span = upper_threshold - lower_threshold
+                            fraction = 0.0 if span == 0 else (value - lower_threshold) / span
+                            return tuple(
+                                int(round(lower_channel + fraction * (upper_channel - lower_channel)))
+                                for lower_channel, upper_channel in zip(lower_color, upper_color)
+                            )
+                    return color_stops[-1][1]
+
+                if discount_col in hotels_geo.columns:
+                    colors = hotels_geo[discount_col].apply(_color_for_discount)
+                    color_df = pd.DataFrame(
+                        colors.tolist(),
+                        columns=["color_r", "color_g", "color_b"],
+                        index=hotels_geo.index,
+                    )
+                    hotels_geo = hotels_geo.join(color_df)
+                if not {"color_r", "color_g", "color_b"}.issubset(hotels_geo.columns):
+                    hotels_geo[["color_r", "color_g", "color_b"]] = [220, 20, 60]
+
+                map_points = pd.concat([selected_point, hotels_geo], ignore_index=True)
 
     if not map_points.empty:
         event_points = map_points[map_points["category"] == "Event"]
@@ -475,7 +567,7 @@ def render() -> None:
                     pickable=True,
                 )
             )
-            
+
         if not hotel_points.empty:
             base_hotel_radius = 80
             layers.append(
@@ -483,7 +575,7 @@ def render() -> None:
                     "ScatterplotLayer",
                     data=hotel_points,
                     get_position="[longitude, latitude]",
-                    get_fill_color=[220, 20, 60],
+                    get_fill_color="[color_r, color_g, color_b]",
                     get_radius=base_hotel_radius,
                     radius_scale=1,
                     radius_min_pixels=4,
@@ -509,13 +601,41 @@ def render() -> None:
     else:
         st.map(map_points[["latitude", "longitude"]], use_container_width=True)
 
+    with st.container():
+        filter_col1, filter_col2 = st.columns(2)
+        with filter_col1:
+            st.number_input(
+                "Hide hotels with total cost over ($)",
+                min_value=0.0,
+                step=50.0,
+                key="map_filter_max_total_cost",
+                help="Set to 0 to show all hotels regardless of total cost.",
+            )
+        with filter_col2:
+            st.number_input(
+                "Hide hotels with discount under (%)",
+                min_value=0.0,
+                max_value=100.0,
+                step=1.0,
+                key="map_filter_min_discount_pct",
+                help="Set to 0 to show all hotels regardless of discount.",
+            )
+        st.checkbox(
+            "Only show hotels",
+            key="filter_hotels_only",
+            help="Limit results to properties explicitly classified as hotels.",
+        )
+
     if not error_message and result:
         property_ids = result["property_ids"]
         if not property_ids:
             st.info("No properties found within that radius.")
         else:
             if df.empty:
-                st.warning("Rates were not returned for the properties found.")
+                if hotels_only:
+                    st.warning("No hotel properties match the current filters.")
+                else:
+                    st.warning("Rates were not returned for the properties found.")
             else:
                 st.success(f"Found {len(df)} priced properties.")
 

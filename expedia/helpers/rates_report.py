@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 from datetime import date, datetime
 from pathlib import Path
@@ -22,7 +23,6 @@ RATE_TYPE_LABELS: Mapping[str, str] = {
 }
 SEARCH_POINT_DENSITY = 96
 CACHE_DISTANCE_TOLERANCE_KM = 0.5
-
 
 def _try_parse_date(value: Any) -> Optional[date]:
     """Convert a date/ISO string to a date object when possible."""
@@ -68,6 +68,32 @@ def _coerce_date(value: date | str, *, field: str) -> Tuple[date, str]:
     raise TypeError(f"{field} must be a date or YYYY-MM-DD string.")
 
 
+def _normalize_column_name(name: Any) -> Optional[str]:
+    """Normalize a column label to support matching with minor formatting differences."""
+    if name is None:
+        return None
+    if isinstance(name, str):
+        return re.sub(r"[^a-z0-9]+", "", name.lower())
+    return re.sub(r"[^a-z0-9]+", "", str(name).lower())
+
+
+def _resolve_dataframe_column(df: pd.DataFrame, target: str) -> Optional[str]:
+    """
+    Return the actual dataframe column whose normalized form matches the supplied target label.
+    """
+    if target in df.columns:
+        return target
+
+    normalized_target = _normalize_column_name(target)
+    if not normalized_target:
+        return None
+
+    for column in df.columns:
+        if _normalize_column_name(column) == normalized_target:
+            return column
+    return None
+
+
 def _apply_discount_columns(df: pd.DataFrame, rate_labels: Mapping[str, str], rate_types: Sequence[str]) -> pd.DataFrame:
     """Mirror the Streamlit discount calculation between the first two rate types."""
     if len(rate_types) < 2:
@@ -79,18 +105,24 @@ def _apply_discount_columns(df: pd.DataFrame, rate_labels: Mapping[str, str], ra
     secondary_label = rate_labels.get(secondary_rate, secondary_rate)
     primary_price_col = f"Price ({primary_label})"
     secondary_price_col = f"Price ({secondary_label})"
+    primary_price_field = _resolve_dataframe_column(df, primary_price_col)
+    secondary_price_field = _resolve_dataframe_column(df, secondary_price_col)
 
-    if primary_price_col not in df.columns or secondary_price_col not in df.columns:
+    if primary_price_field is None or secondary_price_field is None:
         return df
 
     delta_col = f"Delta ({primary_label} - {secondary_label})"
+    delta_field = _resolve_dataframe_column(df, delta_col) or delta_col
     discount_col = "Discount (%)"
+    discount_field = _resolve_dataframe_column(df, discount_col) or discount_col
 
     df = df.copy()
-    df[delta_col] = df[primary_price_col] - df[secondary_price_col]
-    df[discount_col] = (df[delta_col] / df[primary_price_col]) * 100
-    df.loc[~(df[primary_price_col] > 0), discount_col] = None
-    df = df.sort_values(by=discount_col, ascending=False, na_position="last").reset_index(drop=True)
+    primary_prices = pd.to_numeric(df[primary_price_field], errors="coerce")
+    secondary_prices = pd.to_numeric(df[secondary_price_field], errors="coerce")
+    df[delta_field] = primary_prices - secondary_prices
+    df[discount_field] = (df[delta_field] / primary_prices) * 100
+    df.loc[~(primary_prices > 0), discount_field] = None
+    df = df.sort_values(by=discount_field, ascending=False, na_position="last").reset_index(drop=True)
     return df
 
 
@@ -501,6 +533,7 @@ def evaluate_deal_quality(
     (first) and secondary (second) rate types.
     """
     discount_col = "Discount (%)"
+    discount_field = _resolve_dataframe_column(df, discount_col)
     if df.empty:
         return {
             "is_good_deal": False,
@@ -516,7 +549,7 @@ def evaluate_deal_quality(
             "qualifying_properties": [],
         }
 
-    if discount_col not in df.columns:
+    if discount_field is None:
         return {
             "is_good_deal": False,
             "best_property": None,
@@ -548,13 +581,42 @@ def evaluate_deal_quality(
 
     primary_rate = rate_types[0]
     secondary_rate = rate_types[1]
-    primary_label = rate_type_labels.get(primary_rate, primary_rate)
-    secondary_label = rate_type_labels.get(secondary_rate, secondary_rate)
+
+    def _clean_rate_label(label: Any) -> str:
+        if isinstance(label, str):
+            stripped = label.strip()
+            lowered = stripped.lower()
+            for prefix in ("price (", "room ("):
+                if lowered.startswith(prefix):
+                    inner = stripped[len(prefix) :]
+                    if inner.endswith(")"):
+                        inner = inner[:-1]
+                    return inner.strip()
+            return stripped
+        return str(label)
+
+    primary_label_raw = rate_type_labels.get(primary_rate, primary_rate)
+    secondary_label_raw = rate_type_labels.get(secondary_rate, secondary_rate)
+    primary_label = _clean_rate_label(primary_label_raw)
+    secondary_label = _clean_rate_label(secondary_label_raw)
     primary_price_col = f"Price ({primary_label})"
     secondary_price_col = f"Price ({secondary_label})"
     delta_col = f"Delta ({primary_label} - {secondary_label})"
+    primary_price_field = _resolve_dataframe_column(df, primary_price_col)
+    if primary_price_field is None:
+        for candidate in (primary_label_raw, primary_rate):
+            primary_price_field = _resolve_dataframe_column(df, candidate)
+            if primary_price_field is not None:
+                break
+    secondary_price_field = _resolve_dataframe_column(df, secondary_price_col)
+    if secondary_price_field is None:
+        for candidate in (secondary_label_raw, secondary_rate):
+            secondary_price_field = _resolve_dataframe_column(df, candidate)
+            if secondary_price_field is not None:
+                break
+    delta_field = _resolve_dataframe_column(df, delta_col)
 
-    discounts = pd.to_numeric(df[discount_col], errors="coerce")
+    discounts = pd.to_numeric(df[discount_field], errors="coerce")
     if discounts.isna().all():
         return {
             "is_good_deal": False,
@@ -570,10 +632,6 @@ def evaluate_deal_quality(
             "qualifying_properties": [],
         }
 
-    best_index = discounts.idxmax()
-    best_discount = discounts.loc[best_index]
-    best_row = df.loc[best_index]
-
     def _coerce_numeric(value: Any) -> Optional[float]:
         if isinstance(value, (int, float)):
             return float(value)
@@ -582,19 +640,19 @@ def evaluate_deal_quality(
         except (TypeError, ValueError):
             return None
 
-    if delta_col in df.columns:
-        savings_series = pd.to_numeric(df[delta_col], errors="coerce")
-    elif primary_price_col in df.columns and secondary_price_col in df.columns:
-        primary_prices = pd.to_numeric(df[primary_price_col], errors="coerce")
-        secondary_prices = pd.to_numeric(df[secondary_price_col], errors="coerce")
+    if delta_field is not None:
+        savings_series = pd.to_numeric(df[delta_field], errors="coerce")
+    elif primary_price_field is not None and secondary_price_field is not None:
+        primary_prices = pd.to_numeric(df[primary_price_field], errors="coerce")
+        secondary_prices = pd.to_numeric(df[secondary_price_field], errors="coerce")
         savings_series = primary_prices - secondary_prices
     else:
         savings_series = pd.Series([float("nan")] * len(df), index=df.index)
 
-    if secondary_price_col in df.columns:
-        total_cost_series = pd.to_numeric(df[secondary_price_col], errors="coerce")
-    elif primary_price_col in df.columns:
-        total_cost_series = pd.to_numeric(df[primary_price_col], errors="coerce")
+    if secondary_price_field is not None:
+        total_cost_series = pd.to_numeric(df[secondary_price_field], errors="coerce")
+    elif primary_price_field is not None:
+        total_cost_series = pd.to_numeric(df[primary_price_field], errors="coerce")
     else:
         total_cost_series = pd.Series([float("nan")] * len(df), index=df.index)
 
@@ -602,12 +660,17 @@ def evaluate_deal_quality(
     savings_threshold_value = float(savings_threshold)
     max_total_cost_value = float(max_total_cost)
 
+    property_field = _resolve_dataframe_column(df, "Property")
+
     qualifying_mask = (
         discounts >= discount_threshold
     ) & (savings_series >= savings_threshold_value) & (total_cost_series <= max_total_cost_value)
     qualifying_mask = qualifying_mask & ~(discounts.isna() | savings_series.isna() | total_cost_series.isna())
     qualifying_count = int(qualifying_mask.sum())
-    qualifying_properties = df.loc[qualifying_mask, "Property"].dropna().astype(str).tolist()
+    if property_field is not None:
+        qualifying_properties = df.loc[qualifying_mask, property_field].dropna().astype(str).tolist()
+    else:
+        qualifying_properties = []
 
     sorted_indices = discounts.sort_values(ascending=False, na_position="last").index
 
@@ -625,33 +688,38 @@ def evaluate_deal_quality(
     fallback_property = None
 
     for idx in sorted_indices:
-        discount_value = discounts.loc[idx]
+        discount_value = _coerce_numeric(discounts.loc[idx])
         savings_value = _coerce_numeric(savings_series.loc[idx])
         total_cost_value = _coerce_numeric(total_cost_series.loc[idx])
-        property_name = df.loc[idx].get("Property")
+        row = df.loc[idx]
+        property_name = row.get(property_field) if property_field is not None else None
+        if property_name is not None and pd.isna(property_name):
+            property_name = None
 
         if fallback_index is None:
             fallback_index = idx
-            fallback_discount = discount_value
-            fallback_savings = savings_value
-            fallback_total_cost = total_cost_value
+            fallback_discount = None if discount_value is None or pd.isna(discount_value) else float(discount_value)
+            fallback_savings = None if savings_value is None or pd.isna(savings_value) else float(savings_value)
+            fallback_total_cost = None if total_cost_value is None or pd.isna(total_cost_value) else float(total_cost_value)
             fallback_property = property_name
 
         qualifies = (
             discount_value is not None
             and not pd.isna(discount_value)
             and savings_value is not None
+            and not pd.isna(savings_value)
             and total_cost_value is not None
-            and discount_value >= discount_threshold
-            and savings_value >= savings_threshold_value
-            and total_cost_value <= max_total_cost_value
+            and not pd.isna(total_cost_value)
+            and float(discount_value) >= discount_threshold
+            and float(savings_value) >= savings_threshold_value
+            and float(total_cost_value) <= max_total_cost_value
         )
 
         if qualifies:
             best_index = idx
-            best_discount = discount_value
-            best_savings = savings_value
-            best_total_cost = total_cost_value
+            best_discount = float(discount_value)
+            best_savings = float(savings_value)
+            best_total_cost = float(total_cost_value)
             best_property = property_name
             is_good_deal = True
             break
@@ -663,22 +731,28 @@ def evaluate_deal_quality(
         best_total_cost = fallback_total_cost
         best_property = fallback_property
 
+    if best_property is not None:
+        if pd.isna(best_property):
+            best_property = None
+        else:
+            best_property = str(best_property)
+
     if not is_good_deal:
         reasons = []
         if best_discount is None or pd.isna(best_discount):
             reasons.append("No valid discount identified.")
-        elif best_discount < discount_threshold:
-            reasons.append(f"Best discount ({best_discount:.1f}%) is below the threshold ({discount_threshold:.1f}%).")
-        if best_savings is None:
+        elif float(best_discount) < discount_threshold:
+            reasons.append(f"Best discount ({float(best_discount):.1f}%) is below the threshold ({discount_threshold:.1f}%).")
+        if best_savings is None or pd.isna(best_savings):
             reasons.append("Unable to determine savings for the best discount.")
-        elif best_savings < savings_threshold_value:
+        elif float(best_savings) < savings_threshold_value:
             reasons.append(
-                f"Best savings (${best_savings:.2f}) are below the threshold (${savings_threshold_value:.2f})."
+                f"Best savings ({float(best_savings):.2f}) are below the threshold (${savings_threshold_value:.2f})."
             )
-        if best_total_cost is None:
+        if best_total_cost is None or pd.isna(best_total_cost):
             reasons.append("Unable to determine total cost for the best discount.")
-        elif best_total_cost > max_total_cost_value:
-            reasons.append(f"Total cost (${best_total_cost:.2f}) exceeds the limit (${max_total_cost_value:.2f}).")
+        elif float(best_total_cost) > max_total_cost_value:
+            reasons.append(f"Total cost ({float(best_total_cost):.2f}) exceeds the limit (${max_total_cost_value:.2f}).")
         reason = " ".join(reasons) or "Deal does not meet the configured thresholds."
     else:
         reason = "Best available deal meets the configured thresholds."
@@ -686,9 +760,9 @@ def evaluate_deal_quality(
     return {
         "is_good_deal": bool(is_good_deal),
         "best_property": best_property,
-        "best_discount_pct": None if pd.isna(best_discount) else float(best_discount),
-        "best_savings": None if best_savings is None else float(best_savings),
-        "best_total_cost": None if best_total_cost is None else float(best_total_cost),
+        "best_discount_pct": None if best_discount is None or pd.isna(best_discount) else float(best_discount),
+        "best_savings": None if best_savings is None or pd.isna(best_savings) else float(best_savings),
+        "best_total_cost": None if best_total_cost is None or pd.isna(best_total_cost) else float(best_total_cost),
         "reason": reason,
         "discount_threshold_pct": discount_threshold,
         "savings_threshold": savings_threshold_value,

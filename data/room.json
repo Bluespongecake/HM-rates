@@ -1,0 +1,219 @@
+{
+  "1521568": {
+    "property_id": "1521568",
+    "status": "available",
+    "rooms": [
+      {
+        "id": "200547341",
+        "room_name": "Double or Twin Room",
+        "rates": [
+          {
+            "id": "246073071",
+            "status": "available",
+            "available_rooms": 7,
+            "refundable": false,
+            "member_deal_available": false,
+            "sale_scenario": {
+              "package": true,
+              "member": false,
+              "corporate": false,
+              "distribution": false
+            },
+            "merchant_of_record": "expedia",
+            "amenities": {
+              "2205": {
+                "id": "2205",
+                "name": "Breakfast buffet"
+              },
+              "2192": {
+                "id": "2192",
+                "name": "Free WiFi"
+              }
+            },
+            "links": {
+              "payment_options": {
+                "method": "GET",
+                "href": "/v3/properties/1521568/payment-options?token=REhZAQsABAoHQhMHUlNCF1ELUj1DVhdLBQMES1REClxLQg5cRR8WBlIBSxZdCFRpTQxRWQcHAlVVWloAHwdTBAwbAwNXBR1XAFsMSFABVlRcAgUFVwZTBB8IVURWUAdWRDtZVWgTVgBXRgBccWBiJH0vdENSQkoRXA5WRGsVVhdKX19db1xXWQAKXlACVQACFFMKAFUVVQBYAUxQUFBUHwcBU1NWAFYBAVdSVBJQQUEVX1wHEGkLEwwMTF0fDR0BFUQHRBdfVlY-XV0OUQQMDV9UAVYVA1ZXDBkEXFAHSAtWUQNJU1YDWFUKWwQDAwhXHkdXEUVQUV5GB0UMAhoVUAoUEkcWQkUPXgNDOVtJAEcARQhWAmhbV1NXCV4vcmoneCR5NxJVVQxQE1lNUQFsRAhcVgpWVQENSwdWFAMNMQUEQQt1V1oVAyIBVBYCVAdWUgNSUFZpFFBXEVdMEB1vAldVB19ta0UDVkRaAglWAwNRRwUNVAENCgtbUAcFV08DARUCVRBFVUFDCgQQa0ZCCl4MWQdvUAYEUFcIDw0GRVsTQxRWW1odXmE3fUJXDlZVUgpAEFkHU1MEFFMFH1QEFEdDR0NaWlVHaAtQWAYAR3VQVFZeRxEIDwpcAQ8DD14JAVw="
+              }
+            },
+            "bed_groups": {
+              "37341": {
+                "id": "37341",
+                "description": "2 Twin Beds",
+                "links": {
+                  "price_check": {
+                    "method": "GET",
+                    "href": "/v3/properties/1521568/rooms/200547341/rates/246073071?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1QJez8GUwpTHFcCGAtWKTcxaiBmQgQEAVcDUFQETlMCCFUZBl4PBhlUUwUBHgIBVlQEUAABVQBbA28RUQZcBl8BU1UYCgMMCEkCC1VSHlsLB1VMAgsBWA9UDVAGUQBRUWUFBwVQC1ZLMgUDCQVJYAUJVFG2YDNmaiCzMGMI8zlkBlYBAFf5Mz4HEjERXAwUdwRVFZYyG2kaEkUbElNAWRNgFQxfd1ZdERtARA1MXBpbFm1EXQgXFRtBF1RWRVoXTRYKVk9pzTJk0DNmV1H6YGUOVgEaXQGDOTbQZTPDNWG8ZDT1ZDb-OmfENjXJMBEABQcFAlcBURgAVFcASAMGWQEfB1RbDxUABVJVBwcCAAFXVw6LNnsBAFMEHgZUSAEMMgdUAwQAXwUHSg4BUVAAAFcBVmKOYzYTUWqkqcc="
+                  }
+                },
+                "configuration": [
+                  {
+                    "type": "TwinBed",
+                    "size": "Twin",
+                    "quantity": 2
+                  }
+                ]
+              },
+              "37316": {
+                "id": "37316",
+                "description": "1 Double Bed",
+                "links": {
+                  "price_check": {
+                    "method": "GET",
+                    "href": "/v3/properties/1521568/rooms/200547341/rates/246073071?token=F~OjogZxwwUV0aMTJQNmNjXzJXBVAFFFMIS1QJez8GUwpTHFcCGAtWKTcxaiBmQgQEAVcDUFQETlMCCFUZBl4PBhlUUwUBHgIBVlQEUAABVQBbA28RUQZcBl8BU1UYCgMMCEkCC1VSHlsLB1VMAgsBWA9UDVAGUQBRUWUFBwVQC1ZLMgUDCQVJYAUJVFG2YDNmaiCzMGMI8zlkBlYBBVD5MzkEEiEJQABYUEFzA1CRNR06SxMWG0YHQQsWJBBdWXFcVxVOFRdfQ11DDht1QQpZGxUSE0BZX0cKQE0SXgNJOJtkY4BlZ1cEq2I-VQQESwlT2DU6jDY3xGI27jdk9jVnoGdmlDZimDdHVFRQUlBaXQFMUAQOXRoCCFYESAFVDgBJVFAAAVABAFJWAw4PhmctAlEDBhpVVR4KUmJXCwsMXA4HVRYCV1ADAFMEVAtu2zZnFADOudPB"
+                  }
+                },
+                "configuration": [
+                  {
+                    "type": "FullBed",
+                    "size": "Full",
+                    "quantity": 1
+                  }
+                ]
+              }
+            },
+            "cancel_penalties": [
+              {
+                "start": "2025-10-10T09:59:00.000+02:00",
+                "end": "2025-11-20T23:59:00.000+01:00",
+                "percent": "100%",
+                "currency": "USD"
+              }
+            ],
+            "nonrefundable_date_ranges": [
+              {
+                "start": "2025-11-20",
+                "end": "2025-11-21"
+              }
+            ],
+            "occupancy_pricing": {
+              "2": {
+                "nightly": [
+                  [
+                    {
+                      "type": "property_fee",
+                      "value": "6.60",
+                      "currency": "USD"
+                    },
+                    {
+                      "type": "tax_and_service_fee",
+                      "value": "21.94",
+                      "currency": "USD"
+                    },
+                    {
+                      "type": "base_rate",
+                      "value": "286.84",
+                      "currency": "USD"
+                    }
+                  ],
+                  [
+                    {
+                      "type": "property_fee",
+                      "value": "7.02",
+                      "currency": "USD"
+                    },
+                    {
+                      "type": "tax_and_service_fee",
+                      "value": "23.34",
+                      "currency": "USD"
+                    },
+                    {
+                      "type": "base_rate",
+                      "value": "305.06",
+                      "currency": "USD"
+                    }
+                  ]
+                ],
+                "fees": {
+                  "mandatory_tax": {
+                    "billable_currency": {
+                      "value": "63.68",
+                      "currency": "EUR"
+                    },
+                    "request_currency": {
+                      "value": "73.99",
+                      "currency": "USD"
+                    }
+                  }
+                },
+                "totals": {
+                  "exclusive": {
+                    "billable_currency": {
+                      "value": "591.90",
+                      "currency": "USD"
+                    },
+                    "request_currency": {
+                      "value": "591.90",
+                      "currency": "USD"
+                    }
+                  },
+                  "inclusive": {
+                    "billable_currency": {
+                      "value": "650.80",
+                      "currency": "USD"
+                    },
+                    "request_currency": {
+                      "value": "650.80",
+                      "currency": "USD"
+                    }
+                  },
+                  "gross_profit": {
+                    "billable_currency": {
+                      "value": "82.55",
+                      "currency": "USD"
+                    },
+                    "request_currency": {
+                      "value": "82.55",
+                      "currency": "USD"
+                    }
+                  },
+                  "marketing_fee": {
+                    "billable_currency": {
+                      "value": "51.18",
+                      "currency": "USD"
+                    },
+                    "request_currency": {
+                      "value": "51.18",
+                      "currency": "USD"
+                    }
+                  },
+                  "property_fees": {
+                    "billable_currency": {
+                      "value": "63.68",
+                      "currency": "EUR"
+                    },
+                    "request_currency": {
+                      "value": "73.99",
+                      "currency": "USD"
+                    }
+                  },
+                  "property_inclusive": {
+                    "billable_currency": {
+                      "value": "623.82",
+                      "currency": "EUR"
+                    },
+                    "request_currency": {
+                      "value": "724.79",
+                      "currency": "USD"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "links": {
+      "additional_rates": {
+        "method": "GET",
+        "href": "/v3/properties/1521568/availability?token=Ql1WAERHXV1QOxULUAtTV1lRUQEIDU9YA1ABFAEEAg5LU1EKDRQAVgMGXVcEVlBUD1MTFw1BBj5FQBJRDxJEU1BfQ1pZXVFZaABGCkNHBEQeXlZWQRQEXFocDQQTXR5bXBFFWlgPDkVUVQoGQVlVBAQDW0hkZB8XUhdWaVsWRw1WWA0VQ1pGFlRdWxBVEVlXFBJRXhIeBFkRXAUPBldRARNWWgAFXgtaCFMBVAEeBQNMAgFEElcQF19REDpBR1xfWlsHaA1SBA5QBQ8LBkBWTEtCB1tbSA42Z3AWDkdGDEABC1EQDApePgBXB1QJMGIiHllZFlxWQApaAWoGDlYIVgAICQRFUV0GVA1eE0AEVwVTBEwJVBoEChFGFQoGCg1UCVUREFxdQBJcD19mRARHWFxhcnQvJHR9QEQDX1RLF11YA2dHDRZCUwYNF1lECFBIEVsJEUNQR0BMC1RdEDtDBEtCCw1WZwoCCgMBXgZSBgFTTFRWAFVLV11fVhpVBlQFHQoEBAAFAQcCUFcBBhBDBFQARj1TUQNXCANVBEJRAUsPRQMVRlwXEF0LVztdAg5TW1wBAgBWAEwDXFYMH1IOUAcbDwAFAh0DBFENUwYMVAFeCAETRgURV2YVXFdbZwVXRQpCDgVUA0VLVQgER2dXD08PRwpfWlwLR15bWUADXztJV1NYUVJWQlBdCAdGAERWXT5NWA9dXApRB1QfBVZOAAFhA1dDBiMBDEQCJwUCGgRUAwJSUgJTUGsSBAxdQVZLDhEBWBFYTUoYa1pcUAMIbGoWIV1dUlgQQVkNXAcCVgFVUQZR"
+      },
+      "recommendations": {
+        "method": "GET",
+        "href": "/v3/properties/availability?token=REhZAQsABAoHQhIKW0ZADFYCahJRTQoENid6cnRzJh4UVABWR0sNDVM7SgtBFFBTBBdUFA1RThJZVhISQANQV0ZEXl1RbERcU19XV1UABVUABRhUUVJdHw1VUQAYWlEBCElSBgADV1AIBAcDAg4UElASUDpFTkkADhdBV1APRw1WWFFfb1dBC0BLAxASDlNQTBFYXwFBXApHVhRBQAkOV0dqQQAVRgtbWz5YAgkEBgpTBgVSUxtQUAADT1EJDAcUUVNUAEkEDVlXBAwHAVIDWgsWEVRUVEA8V1xRClxRCQ4SB1AXDBFVRxBdEEJdCl88UVAFAVUKAAVQBVZIVFJSAEhQDFZQHw1QBFccUAcKXANTCVQPAw4CHltTCwQXVl8BDQBZTmFhFhBUFV1mWxVHWQ5fDhEXCkZKBVNbS1BJDFAbF1BbEkVCURdVOkhYAFo6AVwTDxEOAxVLBVVdETtVD05YEA1WVQYIQwlbCUABXm4SAAUOUAUDRQIDDFJFAxZXVGdEDFtQCQEHVlRPBQYdVwwxBFAVCiMMX0MKeAQFTQ5TAlUDBQ1VUG5CXw1YElZEBENWCxFbFxNIZgFbVgMLZ2cQUlJGWlQIBVMGVhJXCVNbWlxbCVZVAAxIAQcYClYeQAVER1kEQTxIRgsHXVRXPlACCFMABg9dAUVQQ0YUVgpaTw1mY3EVCVZKDQdACF5UZgJRUAxWBFRcBUdRXAMAWVpARlhUBVABGFAASwYBEkAEVlQQB1gBBm5EEApBUEFNSmgLU1kHDApQAQ8LEiVdXFpbEUBVDAFVAwMFUgEGVAY="
+      }
+    },
+    "score": 212
+  }
+}

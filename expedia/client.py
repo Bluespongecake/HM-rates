@@ -183,6 +183,7 @@ class ExpediaClient:
         sales_channel: str = "website",
         sales_environment: str = "hotel_package",
         customer_ip: Optional[str] = None,
+        rate_options: Optional[Iterable[str]] = None,
     ) -> Dict[str, Dict[str, Any]]:
         """Return availability responses for up to 250 properties in a single call."""
         ids = [property_ids] if isinstance(property_ids, str) else list(property_ids)
@@ -207,6 +208,10 @@ class ExpediaClient:
             "payment_terms": rate_config["payment_terms"],
             "partner_point_of_sale": rate_config["partner_point_of_sale"],
         }
+        if rate_options:
+            params["rate_option"] = list(dict.fromkeys(rate_options))
+
+        print(params)
 
         data = self._request(
             "get",

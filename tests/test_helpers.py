@@ -1,3 +1,5 @@
+from typing import Mapping, Optional
+
 import pytest
 
 import expedia.helpers
@@ -28,16 +30,31 @@ def availability_payload():
     }
 
 
-def _rate(value: str):
+def _rate(value: str, *, overrides: Optional[Mapping[str, float]] = None):
+    base_value = float(value)
+    totals_template = {
+        "inclusive": base_value,
+        "exclusive": base_value - 10.0,
+        "inclusive_strikethrough": base_value + 15.0,
+        "property_inclusive_strikethrough": base_value + 10.0,
+        "gross_profit": max(base_value * 0.1, 0.0),
+        "strikethrough": base_value + 20.0,
+        "property_inclusive": base_value - 5.0,
+        "marketing_fee": max(base_value * 0.05, 0.0),
+    }
+    if overrides:
+        totals_template.update(overrides)
+
     return {
         "occupancy_pricing": {
             "2": {
                 "totals": {
-                    "inclusive": {
+                    key: {
                         "request_currency": {
-                            "value": value,
+                            "value": f"{amount:.2f}",
                         }
                     }
+                    for key, amount in totals_template.items()
                 }
             }
         }
@@ -108,6 +125,75 @@ def test_build_rates_dataframe_validates_input_lengths(availability_payload):
         expedia.helpers.build_rates_dataframe([availability_payload], labels=["only", "extra"])
 
 
+def test_build_rates_dataframe_supports_multiple_totals():
+    payload = {
+        "rooms": [
+            {
+                "room_name": "Standard Room",
+                "rates": [
+                    _rate("125.00"),
+                    _rate("90.00"),
+                ],
+            },
+            {
+                "room_name": "Suite",
+                "rates": [
+                    _rate("260.00"),
+                    _rate("200.00"),
+                ],
+            },
+        ]
+    }
+
+    df = expedia.helpers.build_rates_dataframe(
+        [payload],
+        labels=["pub_prepay"],
+        total_fields=[
+            "inclusive",
+            "exclusive",
+            "inclusive_strikethrough",
+            "property_inclusive_strikethrough",
+            "gross_profit",
+            "strikethrough",
+            "property_inclusive",
+            "marketing_fee",
+        ],
+    )
+
+    expected_columns = [
+        "room_name",
+        "pub_prepay_inclusive",
+        "pub_prepay_exclusive",
+        "pub_prepay_inclusive_strikethrough",
+        "pub_prepay_property_inclusive_strikethrough",
+        "pub_prepay_gross_profit",
+        "pub_prepay_strikethrough",
+        "pub_prepay_property_inclusive",
+        "pub_prepay_marketing_fee",
+    ]
+    assert df.columns.tolist() == expected_columns
+
+    standard_row = df[df["room_name"] == "Standard Room"].iloc[0]
+    assert standard_row["pub_prepay_inclusive"] == pytest.approx(90.00)
+    assert standard_row["pub_prepay_exclusive"] == pytest.approx(80.00)
+    assert standard_row["pub_prepay_inclusive_strikethrough"] == pytest.approx(105.00)
+    assert standard_row["pub_prepay_property_inclusive_strikethrough"] == pytest.approx(100.00)
+    assert standard_row["pub_prepay_gross_profit"] == pytest.approx(9.00)
+    assert standard_row["pub_prepay_strikethrough"] == pytest.approx(110.00)
+    assert standard_row["pub_prepay_property_inclusive"] == pytest.approx(85.00)
+    assert standard_row["pub_prepay_marketing_fee"] == pytest.approx(4.50)
+
+    suite_row = df[df["room_name"] == "Suite"].iloc[0]
+    assert suite_row["pub_prepay_inclusive"] == pytest.approx(200.00)
+    assert suite_row["pub_prepay_exclusive"] == pytest.approx(190.00)
+    assert suite_row["pub_prepay_inclusive_strikethrough"] == pytest.approx(215.00)
+    assert suite_row["pub_prepay_property_inclusive_strikethrough"] == pytest.approx(210.00)
+    assert suite_row["pub_prepay_gross_profit"] == pytest.approx(20.00)
+    assert suite_row["pub_prepay_strikethrough"] == pytest.approx(220.00)
+    assert suite_row["pub_prepay_property_inclusive"] == pytest.approx(195.00)
+    assert suite_row["pub_prepay_marketing_fee"] == pytest.approx(10.00)
+
+
 def test_destination_point_moves_north():
     # Move 1000m north from the equator; expect latitude increase ~0.009 degrees
     lat, lon = expedia.helpers.destination_point(0.0, 0.0, bearing_deg=0.0, distance_m=1000.0)
@@ -161,6 +247,33 @@ def test_property_coordinates_extracts_lat_lon():
 
 def test_property_coordinates_handles_missing_values():
     assert expedia.helpers.property_coordinates({}) == (None, None)
+
+
+def test_property_category_label_returns_name():
+    summary = {"category": {"id": "1", "name": "Hotel"}}
+    assert expedia.helpers.property_category_label(summary) == "Hotel"
+
+
+def test_property_category_label_falls_back_to_id():
+    summary = {"category": {"id": "99"}}
+    assert expedia.helpers.property_category_label(summary) == "99"
+
+
+def test_property_total_room_count_extracts_value():
+    summary = {
+        "statistics": {
+            "52": {
+                "id": "52",
+                "name": "Total number of rooms - 22",
+                "value": "22",
+            }
+        }
+    }
+    assert expedia.helpers.property_total_room_count(summary) == 22
+
+
+def test_property_total_room_count_handles_missing():
+    assert expedia.helpers.property_total_room_count({}) is None
 
 
 class DummyClient:
@@ -220,6 +333,14 @@ class DummyClient:
             pid: {
                 "property_name": f"Hotel {pid}",
                 "location": {"coordinates": {"latitude": 10.0 + idx, "longitude": 20.0 + idx}},
+                "category": {"id": "1", "name": "Hotel"},
+                "statistics": {
+                    "52": {
+                        "id": "52",
+                        "name": f"Total number of rooms - {20 + idx}",
+                        "value": str(20 + idx),
+                    }
+                },
             }
             for idx, pid in enumerate(batch)
         }
@@ -249,6 +370,10 @@ def test_fetch_rates_near_coordinate_multiple_rate_types():
     assert "Price (Public Package)" in df.columns
     assert "Price (Private Prepay)" in df.columns
     assert df.loc[df["Property ID"] == "P1", "Price (request currency)"].iloc[0] == 210.0
+    assert "Total rooms" in df.columns
+    assert df.loc[df["Property ID"] == "P1", "Total rooms"].iloc[0] == 20
+    assert "type" in df.columns
+    assert df.loc[df["Property ID"] == "P1", "type"].iloc[0] == "Hotel"
     assert result["rate_types"] == ["mkt_prepay", "priv_prepay"]
     assert set(result["availability_by_rate_type"].keys()) == {"mkt_prepay", "priv_prepay"}
 

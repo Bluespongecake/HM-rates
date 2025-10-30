@@ -3,7 +3,7 @@
 import json
 from datetime import date
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Mapping, Sequence
+from typing import Any, Dict, Iterable, List, Mapping, Sequence, Set
 
 import pandas as pd
 
@@ -88,6 +88,38 @@ def load_events_from_file(path: Path) -> List[Dict[str, Any]]:
     return []
 
 
+def get_cached_event_map_keys(path: Path | str = Path("reports/events_with_hotels.json")) -> List[str]:
+    """Return unique map keys from the cached events JSON file."""
+    path = Path(path)
+    if not path.exists():
+        return []
+
+    try:
+        raw_data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+
+    records: Iterable[Mapping[str, Any]]
+    if isinstance(raw_data, list):
+        records = (record for record in raw_data if isinstance(record, Mapping))
+    elif isinstance(raw_data, Mapping):
+        records = (raw_data,)
+    else:
+        return []
+
+    seen: Set[str] = set()
+    keys: List[str] = []
+    for record in records:
+        map_key = record.get("map_key")
+        if map_key is None:
+            continue
+        key_str = str(map_key)
+        if key_str not in seen:
+            seen.add(key_str)
+            keys.append(key_str)
+    return keys
+
+
 def load_events_catalog(
     directories: Iterable[Path],
     patterns: Sequence[str] | None = None,
@@ -159,4 +191,5 @@ __all__ = [
     "load_events_from_excel",
     "load_events_from_file",
     "load_events_catalog",
+    "get_cached_event_map_keys",
 ]

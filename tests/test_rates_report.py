@@ -218,6 +218,80 @@ def test_evaluate_deal_quality_chooses_next_best_qualifying_property():
     assert result["best_total_cost"] == pytest.approx(140.0)
 
 
+def test_evaluate_deal_quality_handles_label_case_mismatch():
+    df = pd.DataFrame(
+        [
+            {
+                "Property": "Point A Liberties",
+                "Price (Public Rate)": 406.99,
+                "Price (Private Package)": 289.47,
+                "Delta (Public Rate - Private Package)": 117.51999999999998,
+                "Discount (%)": 28.87540234403793,
+            },
+            {
+                "Property": "Leonardo Hotel Dublin Parnell Street",
+                "Price (Public Rate)": 518.64,
+                "Price (Private Package)": 428.54,
+                "Delta (Public Rate - Private Package)": 90.09999999999997,
+                "Discount (%)": 17.372358476014185,
+            },
+        ]
+    )
+
+    result = rates_report.evaluate_deal_quality(
+        df,
+        rate_types=["mkt_prepay", "priv_pkg"],
+        rate_type_labels={"mkt_prepay": "Public rate", "priv_pkg": "Private package"},
+        discount_threshold_pct=10.0,
+        savings_threshold=80.0,
+        max_total_cost=400.0,
+    )
+
+    assert result["is_good_deal"] is True
+    assert result["best_property"] == "Point A Liberties"
+    assert result["best_discount_pct"] == pytest.approx(28.87540234403793)
+    assert result["best_savings"] == pytest.approx(117.51999999999998)
+    assert result["best_total_cost"] == pytest.approx(289.47)
+
+
+def test_evaluate_deal_quality_handles_column_rate_types():
+    df = pd.DataFrame(
+        [
+            {
+                "Property": "Hotel Column A",
+                "Price (Public rate)": 400.0,
+                "Price (Private package)": 300.0,
+                "Delta (Public rate - Private package)": 100.0,
+                "Discount (%)": 25.0,
+            },
+            {
+                "Property": "Hotel Column B",
+                "Price (Public rate)": 380.0,
+                "Price (Private package)": 360.0,
+                "Delta (Public rate - Private package)": 20.0,
+                "Discount (%)": 5.5,
+            },
+        ]
+    )
+    result = rates_report.evaluate_deal_quality(
+        df,
+        rate_types=["Price (Public rate)", "Price (Private package)"],
+        rate_type_labels={
+            "Price (Public rate)": "Price (Public rate)",
+            "Price (Private package)": "Price (Private package)",
+        },
+        discount_threshold_pct=10.0,
+        savings_threshold=50.0,
+        max_total_cost=350.0,
+    )
+
+    assert result["is_good_deal"] is True
+    assert result["best_property"] == "Hotel Column A"
+    assert result["best_discount_pct"] == pytest.approx(25.0)
+    assert result["best_savings"] == pytest.approx(100.0)
+    assert result["best_total_cost"] == pytest.approx(300.0)
+
+
 def test_generate_rates_dataframe_adds_distance_column(monkeypatch):
     called_kwargs = {}
 

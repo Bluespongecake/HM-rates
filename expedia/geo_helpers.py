@@ -34,7 +34,7 @@ def destination_point(lat_deg: float, lon_deg: float, bearing_deg: float, distan
     """
     Compute the lat/lon reached when travelling a distance along a bearing on a spherical Earth.
     """
-    earth_radius_m = 6371008.8  # mean Earth radius (meters)
+    earth_radius_m = 6378137.0  # WGS84 equatorial radius (meters)
     φ1 = math.radians(lat_deg)
     λ1 = math.radians(lon_deg)
     θ = math.radians(bearing_deg)
@@ -62,7 +62,7 @@ def haversine_distance(
     lat2: float,
     lon2: float,
     *,
-    radius_m: float = 6371008.8,
+    radius_m: float = 6378137.0,
 ) -> float:
     """
     Compute great-circle distance between two points on Earth using the haversine formula.
